@@ -1,0 +1,16 @@
+<import src='../../template/deliverDetail1.wxml' />
+<import src='../../template/deliverDetail2.wxml' />
+<view class="tab" style='display:fixed;'>
+  <view class="tab-item {{page==1 ? 'selected' : ''}}" data-current="0" bindtap="swichNav1">全部投递</view>
+  <view class="tab-item {{page==2 ? 'selected' : ''}}" data-current="1" bindtap="swichNav2">营地已看</view>
+</view>
+
+<!--container1-->
+<view class="" wx:if="{{page == 1}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" animation="{{ani1}}" current="{{page-1}}" duration="200">
+  <template is='allDeliver_link1' data='{{positionList1}}' />
+</view>
+
+<!--container2-->
+<view class="" wx:if="{{page == 2}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" animation="{{ani2}}">
+  <template is='allDeliver_link2' data='{{positionList2}}' />
+</view>

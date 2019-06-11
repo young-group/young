@@ -1,0 +1,70 @@
+<view class="container">
+
+  <view class="wrap">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='itemView'>
+        <text class="  " id="text13" label="文字" style="display:block;font-weight:bold;font-size:14px;margin-bottom:10px;">开始时间：</text>
+        <view class="" >
+          <picker mode="date" value="{{startdate}}" start="2000-01-01" end="2050-01-01" bindchange="bindStartDateChange">
+            
+              <input placeholder='  请输入开始时间' name="startdate" type="text" class="input" disabled='true' value="{{startdate}}" />
+            
+          </picker>
+        </view>
+      </view>
+
+            <view class='itemView'>
+        <text class="  " id="text13" label="文字" style="display:block;font-weight:bold;font-size:14px;margin-bottom:10px;">结束时间：</text>
+        <view class="" >
+          <picker mode="date" value="{{enddate}}" start="2000-01-01" end="2050-1-1" bindchange="bindEndDateChange">
+            
+              <input placeholder='  请输入结束时间' name="enddate" type="text" class="input" disabled='true' value="{{enddate}}" />
+            
+          </picker>
+        </view>
+      </view>
+
+      
+
+
+      
+
+  <!-- <view class="itemView ">
+
+      <text decode="true"> 出生年月:</text>
+      <view class="input">
+        <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">
+          <view class="">
+            <input placeholder='请输入出生年月' name="birthday" type="text" class="input" value="{{dates}}" />
+          </view>
+
+        </picker>
+      </view>
+    </view> -->
+
+
+
+      <view class="itemView ">
+        <text class="  " id="text13" label="文字" style="display:block;font-weight:bold;font-size:14px;margin-bottom:10px;margin:0px;" space="ensp">职    能：</text>
+        <view class="">
+             <input placeholder="  " maxlength="11 " type="text " name="job" value="{{job}}" class="input" />
+     </view >
+      </view>
+
+      <text class="  " id="text13" label="文字" style="display:block;font-weight:bold;font-size:14px;margin-bottom:10px;margin:12px;">经历概述：</text>
+      <view class="contant_wrap" style="margin:12px;">
+        <view class="contant">
+          <textarea name="workDescribe" value="{{workDescribe}}" auto-height placeholder-class="placeholder" placeholder="请详细叙述您的经历" />
+        </view>
+      </view>
+
+      <!-- 其他  -->
+      <button class="save-btn btn-w690" type="primary" bindtap="save" form-type="submit">完成</button>
+      <button class="del-btn btn-w690" type="primary" bindtap="del" form-type="reset" wx:if="{{id != 0}}">删除该条工作经历 </button>
+      <!-- <view class="cue">注意：删除的按钮在有数据的时候存在</view>  -->
+      <!-- 自定义toast  -->
+      <!-- <template is="defineToast" data="{{...deToast}}" /> -->
+    </form>
+
+  </view>
+</view>

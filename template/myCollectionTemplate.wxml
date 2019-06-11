@@ -1,0 +1,25 @@
+<template name='collection_link'>
+  <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}'>
+    <view class="collection-item">
+      <image class="item-logo" src="{{item.clogo}}" />
+      <view class="item-desc">
+        <view class="item-desc-l">
+          <view class="item-title text-ellipsis">{{item.companyName}}</view>
+          <view class="item-info">
+            <text class="item-pos">{{item.positionName}}</text>
+          </view>
+          <view class="item-time">2019-04-10</view>
+        </view>
+
+        <view class="item-desc-r">
+          <view>
+            <!--收藏-->
+            <image class='button-collect' src="{{isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='{{item.pid}}' bindtap="haveSave"></image>
+          </view>
+          <view class="item-collection">{{item.salary}}</view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

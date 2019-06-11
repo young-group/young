@@ -1,0 +1,97 @@
+<!--pages/resume/resume.wxml-->
+<import src='../../template/experienceTemplate.wxml' />
+<view class="resume">
+
+  <view bindtap="bindViewTap" class="userinfo">
+    <view>
+      <button type="default" class='button' bindtap='editBaseImformation' >编辑</button>
+    </view>
+    <view class='header'>
+      <open-data class='userInfo' type="userAvatarUrl" bindgetuserinfo="onGotUserInfo"></open-data>
+    </view>
+  </view>
+
+  <view class="resume-content">
+
+    <!-- 基本信息-start -->
+    <view class="resume-section">
+
+      <view class="resume-detail">
+        <view>
+          <text class="detail-key c8" decode='{{true}}'>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</text>
+          <text class="detail-value">{{information.name==null?'':information.name}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8" decode='{{true}}'>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</text>
+          <text class="detail-value">{{information.sex==null?'':information.sex}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8">出生年月：</text>
+          <text class="detail-value">{{information.birth==null?'':information.birth}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8">所在城市：</text>
+          <text class="detail-value">{{information.currentCity==null?'':information.currentCity}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8">大学名称：</text>
+          <text class="detail-value">{{information.univercity==null?'':information.univercity}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8" decode='{{true}}'>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</text>
+          <text class="detail-value">{{information.major==null?'':information.major}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8">联系电话：</text>
+          <text class="detail-value">{{information.tel==null?'':information.tel}}</text>
+        </view>
+        <view>
+          <text class="detail-key c8">联系邮箱：</text>
+          <text class="detail-value">{{information.email==null?'':information.email}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="resume-section">
+      <view class="section-title">
+        <view class="left-border"></view>
+        <text>经历介绍</text>
+      </view>
+      <view class="resume-list">
+
+
+        <view>
+          <button type="default" style="left:41.5%;width: 60px;height: 30px;font-size: 13px;font-display: center;" bindtap='editExperience'>编辑</button>
+        </view>
+
+
+        <view class="resume-item">
+          <view class="status-time">
+            <!--  个人经历  -->
+            <template is='experience_link' data='{{workList}}' />
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+
+    <!-- 自我评价-start -->
+    <view class="resume-section">
+      <view class="section-title">
+        <view class="left-border"></view>
+        <text>特长爱好</text>
+      </view>
+      <view>
+        <button type="default" style="left:75%;width: 60px;height: 30px;font-size: 13px;font-display: center;margin:5px;" bindtap='editEvaluation'>编辑</button>
+      </view>
+      <view class="resume-list">
+        <view>
+{{information.favor==null?'':information.favor}}
+        </view>
+      </view>
+    </view>
+    <!-- 自我评价-end -->
+
+  </view>
+</view>

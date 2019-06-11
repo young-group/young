@@ -1,0 +1,78 @@
+<!--mine.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <view class='header'>
+
+      <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+      <open-data class='userInfo' type="userAvatarUrl" bindgetuserinfo="onGotUserInfo"></open-data>
+    </view>
+    <open-data class='userinfo-nickname' type="userNickName" lang="zh_CN"></open-data>
+    <!-- 需要使用 button 来授权登录 -->
+    <!-- <view class="delete {{editTrue?'isRuleShow':'isRuleHide'}}" bindtap="showedit"> -->
+    <button type="primary" class="delete {{editTrue?'isRuleShow':'isRuleHide'}}" bindtap="showedit" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="setUserInfoAndNext">授权登录</button>
+    <view wx:else>请升级微信版本</view>
+    <!-- </view> -->
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+      <view class="zan-cell__bd">
+        <image src="{{item.icon}}" class="img"></image>
+        <text>{{ item.text }}</text>
+      </view>
+    </view>
+    <view class='zan-cell'></view>
+  </view>
+
+  <!-- <view class="zan-panel">
+    <view class="zan-cell zan-cell--access" wx:for="{{ settings }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+      <view class="zan-cell__bd">
+          <image src="{{item.icon}}" class="img"></image>
+          {{ item.text }}
+      </view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view> -->
+  <!-- <view class="show-popup" hidden="{{hidePopup}}" >
+        <view class="popup-mask" bindtap="closePopupTap"></view>
+        <view class="popup-contents">
+          <form catchsubmit="formSubmit">
+            <view class="zan-cell zan-form__item">
+              <text class="zan-form__title">联系电话</text>
+              <input
+                class="zan-form__input zan-cell__bd"
+                type="number"
+                maxlength="20"
+                placeholder="{{phoneNumber}}"
+                name="phoneNumber"
+              />
+              <button formType="submit" class="zan-btn zan-btn--small zan-btn--submit">确定
+                </button>
+            </view>
+          </form>
+        </view>
+  </view> -->
+  <!--<view class="info_list">
+		<view class="weui-cells">
+			<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+                <view class="weui-cell__hd">
+                    <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">{{ item.text }}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">
+                	<text wx:if="{{ index === 2 }}">{{ item.path }}</text>
+                </view>
+            </navigator>
+        </view>
+        <view class="weui-cells">
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ settings }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="bindtap">
+                <view class="weui-cell__hd">
+                    <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">{{ item.text }}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">
+                    <text wx:if="{{ index === 0 }}">{{ item.path }}</text>
+                </view>
+            </navigator>
+        </view>-->
+</view>

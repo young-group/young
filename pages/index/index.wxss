@@ -1,0 +1,95 @@
+/**index.wxss**/
+
+/**  顶部-start  **/
+
+.custom-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-bottom: 1px solid #e8e8e8;
+  height: 43px;
+  line-height: 43px;
+  color: #555;
+  font-size: 14px;
+}
+
+.go {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+  color: #00b38a;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+}
+
+.edit {
+  margin-right: 2px;
+  width: 10px;
+  height: 10px;
+}
+
+/**  顶部-end  **/
+
+.list-more {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #fafafa;
+}
+
+.input {
+  flex-shrink: 0;
+  width: 80%;
+  margin-left: 5%;
+  padding: 8px 0 0;
+  height: 25px;
+  line-height: 25px;
+  color: rgba(20, 3, 3, 0.808);
+  font-size: 15px;
+  border: 1px solid rgba(132, 128, 128, 0.664);
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 8px;
+}
+
+.icon {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20%;
+  height: 45px;
+  line-height: 45px;
+}
+
+.icon-search {
+  width: 17px;
+  height: 17px;
+}
+
+.r-input {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.swipper-image {
+  height: 477rpx;
+  margin-top: -20px;
+  width: 100%; 
+  padding: 5px 10px 0px 10px;
+}
+
+.item-title{
+  font-size: 13px;
+}

@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<import src='../../template/template.wxml' />
+<view class="">
+ 
+ 
+  <view wx:if='{{showBtn}}' class="list-more" bindtap='loadMore'>{{ isLoading ? '正在加载...': '加载更多' }}</view>
+  <view class="r-input">
+      <input class="input" type="text" placeholder=" 搜 索 营 地" />
+      <view class="icon">
+        <image class="icon-search" src="../../static/icon/search_normal.png"></image>
+      </view>
+  </view>
+<swiper indicator-dots="{{indicatorDots}}"
+ autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swipper-image">
+ <block wx:for="{{imgUrls}}" wx:key="unique">
+  <swiper-item>
+   <image src="{{item}}" class="slide-image"/>
+  </swiper-item>
+ </block>
+</swiper>
+ <!--  职位列表  -->
+  <template is='position_link' data='{{positionList}}' />
+  
+<!-- 迭代营地
+<block wx:for="{{data}}" data-item="item" wx:for-index="idx" >
+  <view>
+    第{{idx}}次输出,姓名：{{item.name}}
+  </view>
+</block> -->
+</view>

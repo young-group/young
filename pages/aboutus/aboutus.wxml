@@ -1,0 +1,19 @@
+<view class="x-page" id="page">
+
+  <view id="inVisibleCompContainer"></view>
+  <image class="weui-img weui-img_o" id="image1" label="LOGO" mode="aspectFill" style="width:100%;height:150px;border:1px solid #fff" src="../../static/images/myschool.jpg"></image>
+  <view id="view1" label="背景颜色" style="text-align:center;background-color:#f6f6f6;height:10px" />
+  <view id="view" style="margin-left:15px;margin-right:15px;font-size:12px;margin-top:15px">
+    <!-- <text id="text" label="店铺名称" style="display:block;font-size:16px;font-weight:bold;width:100%;margin-bottom:10px">{{((restData.current.name)===null || (restData.current.name)===undefined || (restData.current.name)==='') ? '' : (restData.current.name)}}</text> -->
+    <text id="text1" label="地址" style="display:block;margin-bottom:10px" space="ensp">地址： 哈尔滨市松北区浦源路2468号黑龙江科技大学  </text>
+
+    <text id="text2" label="商务热线" style="display:block;margin-bottom:10px" space="ensp">商务热线： 123456789</text>
+    <text id="text3" label="客服电话" style="display:block;margin-bottom:10px" space="ensp">客服电话： 123456789</text>
+    
+    <text id="text3" label="标题" style="display:block;margin-bottom:10px;font-weight: bold;font-size:14px;margin-top:15px">番薯青年派简介</text>
+    <rich-text id="richText" label="店铺简介" class="wx-richtext" nodes="“番薯青年派”是一个高校大学生社会实践的信息共享平台，缓解大学生社会经验不足的问题。我们以社会实践中的营地导师为主要切入点，针对大学生对社会实践的重视及迫切需要与青少年营地教育高素质导师人才需求的问题，采用互联网＋共享经济＋新媒体＋教育的生态产业链，将双方的社会需求进行有效的互补对接，实现教育资源的高效利用。大学生既是公司职员（学习者）也是营地导师（教育者），在实践过程中不断学习新知识，同时也将自身所学传授给其他人（青少年），是一个知识共享、实现价值最大化的过程。"></rich-text>
+  </view>
+  <view id="__toptips__" class="wx-toptips" style="{{(!__toptips__.show) ? 'display:none!important' : ''}}">
+    <view wx:for="{{__toptips__.msgs}}" wx:key="_key" class="wx-toptips-item {{item.typeClass}} {{item.show?'wx-toptips--show':''}}">{{item.message}}</view>
+  </view>
+</view>

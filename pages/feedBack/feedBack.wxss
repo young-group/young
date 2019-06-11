@@ -1,0 +1,37 @@
+/* pages/advice/advice.wxss */
+page{
+    background-color: #efefef;
+}
+ 
+.contant_wrap{
+    background-color: #fff;
+}
+.contant{
+    width: 94%;
+    margin: 0 auto
+}
+textarea{
+    min-height: 300rpx;
+    padding: 10rpx 0;
+    width: 100%;
+}
+input{
+    margin-top: 30rpx;
+    height: 100rpx;
+    padding-left: 20rpx;
+    background-color: #fff;
+}
+button{
+background-color:#ff8d3a;
+font-size:14px;
+color:#fff;
+width:90%;
+}
+.placeholder{
+    color: #999999;
+    font-size: 12pt;
+
+}
+.hover {
+  background:  rgb(236, 179, 156);
+}

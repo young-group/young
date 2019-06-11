@@ -1,0 +1,17 @@
+<view class="opinion_wrap">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="wrap">
+      <view class="x-panel-content" id="content" style="top:0px;bottom:48px">
+        <text class="  " id="text13" label="文字" style="display:block;font-weight:bold;font-size:14px;margin-bottom:10px;margin:12px;">特长爱好</text>
+        <form bindsubmit="formSubmit" action="" method="get" >
+          <view class="contant_wrap" style="margin:12px;">
+            <view class="contant">
+              <textarea name="favor" value="{{favor}}" auto-height placeholder-class="placeholder" placeholder="良好的特长爱好能提高您的竞争优势哟"  />
+            </view>
+          </view>
+          <button formType="submit" hover-class="hover" loading="{{loading}}" class="wx-btn">提交</button>
+        </form>
+      </view>
+    </view>
+  </form>
+</view>

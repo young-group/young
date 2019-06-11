@@ -1,0 +1,20 @@
+<template name='experience_link'>
+  <view wx:for='{{workList}}' wx:key='item.positionId' class='resume-item' data-pid='{{item.positionId}}'>
+
+
+  <view class="resume-item">
+    <view class="status-time">
+      <view class="dot"></view>
+      <text class="c8">{{item.startTime}}-{{item.endTime}}</text>
+    </view>
+    <view class="status-text">
+      <view>{{item.job}}</view>
+      <view class="position-desc">
+        {{item.detail}}
+      </view>
+    </view>
+  </view>
+
+
+  </view>
+</template>

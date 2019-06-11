@@ -1,0 +1,76 @@
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+
+    <view class="itemView ">
+      <text decode="true">姓名:&ensp;&ensp;&ensp;&ensp;</text>
+      <input placeholder="" maxlength="11 " type="text " name="uuname" value="{{uuname}}" class="input" />
+    </view>
+
+
+    <view class="itemView ">
+      <text decode="true"> 出生年月:</text>
+      <view class="input">
+        <picker mode="date" value="{{ubirthday}}" start="1900-1-1" end="2100-1-1" bindchange="bindDateChange">
+          <view class="">
+            <input placeholder='请选择日期' disabled='true' name="ubirthday" type="text" class="input" value="{{ubirthday}}" />
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+    <view class="itemView ">
+      <text decode="true"> 性别:&ensp;&ensp;&ensp;&ensp;</text>
+      <view class="input">
+      <!-- 下拉框 -->
+      <view class='select_box'>
+        <view class='select' catchtap='selectTap'>
+          <text class='select_text'>{{selectData[index]}}</text>
+          <!-- <image class='words_img' src='../../images/dv.png'></image> -->
+          <!-- <image class='select_img {{show&&"select_img_rotate"}}' src='/image/gobottom.png'></image> -->
+        </view>
+        <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;' bindtap='showText'>
+          <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap' value="{{usex}}">{{item}}</text>
+        </view>
+      </view>
+      </view>
+    </view>
+
+
+    <view class="itemView">
+      <text decode="true">所在城市:</text>
+      <input placeholder="" maxlength="11 " type="text " name="uname" value="{{ucity}}" class="input one {{!show?'show':'hide'}}" />
+    </view>
+
+
+    <view class="itemView ">
+      <text decode="true"> 大学名称:</text>
+      <input placeholder=" " maxlength="11 " type="text " name="uschoolName" value="{{uschoolName}}" class="input one {{!show?'show':'hide'}}" />
+    </view>
+
+
+    <view class="itemView">
+      <text decode="true">专业:&ensp;&ensp;&ensp;&ensp;</text>
+      <input placeholder="" maxlength="11 " type="text " name="uschoolProfession" value="{{uschoolProfession}}" class="input" />
+    </view>
+
+
+    <view class="itemView ">
+      <text decode="true"> 联系电话:</text>
+      <input placeholder="" maxlength="11 " type="text " name="utel" value="{{utel}}" class="input" />
+    </view>
+
+
+    <view class="itemView ">
+      <text decode="true"> 联系邮箱:</text>
+      <input placeholder="  " maxlength="20 " type="text " name="uemail" value="{{uemail}}" class="input" />
+    </view>
+
+
+    <view class="btn">
+      <button form-type="submit" hover-class="hover">提交</button>
+    </view>
+  </form>
+
+
+</view>

@@ -1,0 +1,129 @@
+<view class="interview">
+  <view class="content">
+    <view class="tabs">
+      <!-- <view class="tab selected" bindtap="showMenuTap" data-type="1">全部投递</view>
+      <view class="tab" bindtap="showMenuTap" data-type="2">营地已看</view> -->
+      <view class="tab {{currentTab==0 ? 'selected' : ''}}" data-current="0" bindtap="swichNav">全部投递</view>
+      <view class="tab {{currentTab==1 ? 'selected' : ''}}" data-current="1" bindtap="swichNav">营地已看</view>
+    </view>
+
+    <view class='swipperstyle'>
+    <swiper current="{{currentTab}}" duration="200" bindchange="swiperChange">
+
+      <!--全部投递内容-->
+      <swiper-item class="swiper-height">
+      <scroll-view scroll-y='true'>
+        <view class="i-list">
+          <view class="i-item">
+            <view class="i-item-title border">
+              <view class="i-item-time">12月28日 10:00</view>
+              <view class="i-item-status">
+                <text class="offer-receive-btn">已面试</text>
+              </view>
+            </view>
+            <view class="i-item-info border">
+              <view class="i-item-position text-ellipsis">xx营地</view>
+              <view class="i-item-company text-ellipsis">营地指导员</view>
+              <view class="i-item-address text-ellipsis">工作地点： 南山科技园讯美广场1号楼6楼6105</view>
+            </view>
+            
+            <view class="i-item-footer">
+              <view class="tel">
+                <image class="tel-icon" src='../../static/icon/tel.png'></image>
+                <view class="tel-num">13246706373</view>
+              </view>
+              <!-- <view class="add-eval">
+                <view class="stars"></view>
+              </view> -->
+            </view>
+          </view>
+        </view>
+        </scroll-view>
+      </swiper-item>
+
+      
+      <!--营地已查看内容-->
+      <swiper-item>
+      <scroll-view scroll-y='true'>
+        <view class="i-list">
+          <view class="i-item">
+            <view class="i-item-title border">
+              <view class="i-item-time">12月28日 10:00</view>
+              <view class="i-item-status">
+                <text class="offer-receive-btn">不合适</text>
+              </view>
+            </view>
+            <view class="i-item-info border">
+              <view class="i-item-position text-ellipsis">xx营地</view>
+              <view class="i-item-company text-ellipsis">岗位</view>
+              <view class="i-item-address text-ellipsis">地址： 南山科技园讯美广场1号楼6楼6105</view>
+            </view>
+            <view class="i-item-footer">
+              <view class="tel">
+                <image class="tel-icon" src='../../static/icon/tel.png'></image>
+                <view class="tel-num">13246706373</view>
+              </view>
+              <view class="add-eval">
+                <view class="stars"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+    </view>
+ <!-- <view class="i-list">
+          <view class="i-item">
+            <view class="i-item-title border">
+              <view class="i-item-time">12月28日 10:00</view>
+              <view class="i-item-status">
+                <text class="offer-receive-btn">不合适</text>
+              </view>
+            </view>
+            <view class="i-item-info border">
+              <view class="i-item-position text-ellipsis">xx营地</view>
+              <view class="i-item-company text-ellipsis">岗位</view>
+              <view class="i-item-address text-ellipsis">地址： 南山科技园讯美广场1号楼6楼6105</view>
+            </view>
+            <view class="i-item-footer">
+              <view class="tel">
+                <image class="tel-icon" src='../../static/icon/tel.png'></image>
+                <view class="tel-num">13246706373</view>
+              </view>
+              <view class="add-eval">
+                <view class="stars"></view>
+              </view>
+            </view>
+          </view>
+        </view> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <view wx:if="{{menuType==1}}" class="state-menu " hidden="{{!isVisible}}">
+      <view class="state-item {{status==1?'border':''}}" bindtap="selectState" data-status="1">筛选中</view>
+      <view class="state-item {{status==2?'border':''}}" bindtap="selectState" data-status="2">待面试</view>
+      <view class="state-item {{status==3?'border':''}}" bindtap="selectState" data-status="3">不合适</view>
+      <view class="state-item {{status==4?'border':''}}" bindtap="selectState" data-status="4">已面试</view>
+      <view class="state-item {{status==5?'border':''}}" bindtap="selectState" data-status="5">合适</view>
+    </view> -->
+
+
+
+  </view>
+</view>

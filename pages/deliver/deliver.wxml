@@ -1,0 +1,59 @@
+<!--pages/deliver/deliver.wxml-->
+<import src='../../template/deliverDetail.wxml' />
+<view class="deliver">
+  <view class="tab">
+    <view class="tab-item {{currentTab==0 ? 'selected' : ''}}" data-current="0" bindtap="swichNav">全部投递</view>
+    <view class="tab-item {{currentTab==1 ? 'selected' : ''}}" data-current="1" bindtap="swichNav">营地已看</view>
+  </view>
+
+
+  <swiper current="{{currentTab}}" duration="200" bindchange="swiperChange">
+
+      <!--  全部投递  -->
+      <template is='allDeliver_link' data='{{positionList}}' />
+
+      <!-- <view class="content-list">
+        <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail">
+
+          <view class="content-item-state">
+            <view class="content-item-title text-ellipsis">xxx营地</view>
+            <text class="content-item-status">【 已投递 】</text>
+          </view>
+          <view class="content-item-desc text-ellipsis">营地指导员</view>
+          <view class="content-item-state">
+            <text class="content-item-time">工作地点：南山科技园讯美广场1号楼6楼6105</text>
+          </view>
+        </view>
+        <view wx:else class="content-empty">
+          <text class="text">暂无记录~</text>
+        </view>
+      </view> -->
+
+
+    <swiper-item>
+      <view class="content-list">
+        <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail">
+
+          <view class="content-item-state">
+            <view class="content-item-title text-ellipsis">xxx营地</view>
+            <text class="content-item-status">【 不合适 】</text>
+          </view>
+          <view class="content-item-desc text-ellipsis">营地指导员</view>
+          <view class="content-item-state">
+            <text class="content-item-time">工作地点：南山科技园讯美广场1号楼6楼6105</text>
+          </view>
+        </view>
+        <view wx:else class="content-empty">
+          <text class="text">暂无记录~</text>
+        </view>
+      </view>
+
+    </swiper-item>
+
+
+  </swiper>
+
+
+
+
+</view>

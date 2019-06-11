@@ -1,0 +1,113 @@
+/* pages/mineEdit/mineEdit.wxss */
+
+.container {
+  /* display: inline-flex; */
+  margin-top: 20px;
+}
+
+.itemView {
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 30px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.input {
+  background: rgb(240, 236, 239);
+  height: 30px;
+  width: 70%;
+  text-align: center;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.hover {
+  background: rgba(11, 177, 11, 0.575);
+}
+
+button {
+  color: rgba(4, 132, 4, 0.774);
+}
+
+.select_box {
+  background: #fff;
+  /* width: 620rpx; */
+  margin: 0 auto;
+  /* margin-top: 40rpx; */
+  /* height: 50rpx; */
+  line-height: 86rpx;
+  text-align: center;
+  position: relative;
+}
+
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 70rpx;
+  border: 1px solid #efefef;
+  border-radius: 8rpx;
+  /* display: flex; */
+  align-items: center;
+  padding: 0 20rpx;
+  background: rgb(240, 236, 239);
+    /* background: black; */
+    padding-bottom:10px;
+
+}
+
+.select_text {
+  font-size: 28rpx;
+  flex: 1;
+  color: rgb(102, 102, 102);
+  /* background-color: green; */
+  line-height: 86rpx;
+  height: 86rpx;
+  /* text-align: center; */
+}
+
+.select_img {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.select_img_rotate {
+  transform: rotate(180deg);
+}
+
+.option_box {
+  position: absolute;
+  top: 86rpx;
+  width: 100%;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+  /* background: black; */
+  transition: height 0.3s;
+  /* text-align: center; */
+}
+
+.option {
+  display: block;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+  color: rgb(102, 102, 102);
+}
+.hide{
+ display: none;
+}
+.show{ 
+ display: inline-block;
+}

@@ -1,0 +1,23 @@
+<!--mine.wxml-->
+<view class="container">
+
+
+  <view class="zan-cell">
+    <image src="{{item.icon}}" class="img"></image>
+    <text class='textSize'>手机号码：</text>
+    <view class="phoneNumber"><text id="mynumber" >{{mynumber}}</text></view>
+    <button class='pop_btn' plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber"  lang="zh_CN" hover-class='btn_hover'>获取号码</button>
+  </view>
+
+
+  <view class="zan-cell zan-cell--access" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+    <!-- <view class="zan-cell__bd"> -->
+    <image src="{{item.icon}}" class="img"></image>
+    <text class='textSize'>{{ item.text }}</text>
+    <!-- </view> -->
+  </view>
+  <view class='zan-cell'></view>
+
+
+
+</view>

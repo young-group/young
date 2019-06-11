@@ -1,0 +1,37 @@
+<!--pages/collection/collection.wxml-->
+<import src='../../template/myCollectionTemplate.wxml' />
+<view class="collection">
+  <view class="collection-list">
+
+
+    <view class="collection-item">
+      <image class="item-logo" src="../../static/images/4.jpg" />
+      <view class="item-desc">
+        <view class="item-desc-l">
+          <view class="item-title text-ellipsis">行知成教育</view>
+          <view class="item-info">
+            <text class="item-pos">营地指导员</text>
+          </view>
+          <view class="item-time">2019-04-10</view>
+        </view>
+        <view class="item-desc-r">
+          <view>
+            <!--收藏-->
+            <image class='button-collect' src="{{isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='100' bindtap="haveSave"></image>
+          </view>
+          <view class="item-collection">80-100元/日</view>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- <view class="collection-item"> -->
+      <!-- <view class="status-time"> -->
+        <!--  我的收藏  -->
+        <template is='collection_link' data='{{positionList}}' />
+      <!-- </view> -->
+    <!-- </view> -->
+
+
+  </view>
+</view>

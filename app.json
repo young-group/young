@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/mine/mine",
+    "pages/customInfo/customInfo",
+    "pages/customDetail/customDetail",
+    "pages/resume/resume",
+    "pages/collection/collection",
+    "pages/deliver/deliver",
+    "pages/deliverDetail/deliverDetail",
+    "pages/positionDetail/positionDetail",
+    "pages/companyDetail/companyDetail",
+    "pages/interview/interview",
+    "pages/config/config",
+    "pages/aboutus/aboutus",
+    "pages/feedBack/feedBack",
+    "pages/introduceExperience/introduceExperience",
+    "pages/evaluation/evaluation",
+    "pages/mineEdit/mineEdit",
+    "pages/myInterview/myInterview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00b38a",
+    "navigationBarTitleText": "番薯青年派",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#c2cfcc",
+    "selectedColor": "#00b38a",
+    "backgroundColor": "#f6f6f6",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icon/home_normal.png",
+        "selectedIconPath": "static/icon/home_active.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "营地",
+        "iconPath": "static/icon/search_normal.png",
+        "selectedIconPath": "static/icon/search_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/icon/user_normal.png",
+        "selectedIconPath": "static/icon/user_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
