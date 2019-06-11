@@ -30,14 +30,20 @@ Page({
         },
         success(res) {
           console.log(res.data)
+          wx.showToast({
+            title: '已收藏',
+            duration: 2000
+          });
         },
         fail(e) {
           console.log(e.errMsg)
+          wx.showToast({
+            title: '操作失败',
+            icon: 'none',
+            duration: 2000
+          });
         }
       })
-      wx.showToast({
-        title: '已收藏',
-      });
     } else {
 
       wx.request({
@@ -52,14 +58,20 @@ Page({
         },
         success(res) {
           console.log(res.data)
+          wx.showToast({
+            title: '已取消',
+            duration: 2000
+          });
         },
         fail(e) {
           console.log(e.errMsg)
+          wx.showToast({
+            title: '操作失败',
+            icon: 'none',
+            duration: 2000
+          });
         }
       })
-      wx.showToast({
-        title: '已取消',
-      });
     }
 
     this.setData({
@@ -99,6 +111,11 @@ Page({
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          title: '数据获取失败~',
+          icon: 'none',
+          duration: 2000
+        });
       }
     })
 

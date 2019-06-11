@@ -122,6 +122,10 @@ Page({
       },
       success(res) {
         console.log(res.data);
+        wx.showToast({
+          title: '已提交',
+          duration: 2000
+        });
         that.setData({
           information: {
             result: res.data,
@@ -130,6 +134,11 @@ Page({
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          title: '操作失败',
+          icon: 'none',
+          duration: 2000
+        });
       }
     })
   },

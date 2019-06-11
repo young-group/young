@@ -141,6 +141,11 @@ Page({
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          title: '数据获取失败~',
+          icon: 'none',
+          duration: 2000
+        });
         that.setData({
           information: {
             // name: "青年派",

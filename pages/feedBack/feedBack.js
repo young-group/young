@@ -90,13 +90,17 @@ Page({
       success(res) {
         console.log(res.data);
         wx.showToast({
-          title: '已提交',
-        });
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
       },
       fail(e) {
         console.log(e.errMsg)
         wx.showToast({
-          title: '失败啦',
+          title: '操作失败',
+          icon:'none',
+          duration: 2000
         });
       }
     })
