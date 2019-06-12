@@ -8,10 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    beginTime: "xxxx.xx",
-    endTime: "xxxx.xx",
-    // job: wx.getStorageSync('basicUser').workList[0].job,
-    workDescribe:""
+    workList:[]
   },
 
   /**
@@ -19,15 +16,15 @@ Page({
    */
   onLoad: function(options) {
     this.loadData()
-    var that = this;
-    if (wx.getStorageSync('basicUser').workList[0]){
-    that.setData({
-      beginTime: wx.getStorageSync('basicUser').workList[0].beginTime,
-      endTime: wx.getStorageSync('basicUser').workList[0].endTime,
-      // job: wx.getStorageSync('basicUser').workList[0].job,
-      workDescribe: wx.getStorageSync('basicUser').workList[0].workDescribe
-    })
-    }
+    // var that = this;
+    // if (wx.getStorageSync('basicUser').workList[0]){
+    // that.setData({
+    //   beginTime: wx.getStorageSync('basicUser').workList[0].beginTime,
+    //   endTime: wx.getStorageSync('basicUser').workList[0].endTime,
+    //   // job: wx.getStorageSync('basicUser').workList[0].job,
+    //   workDescribe: wx.getStorageSync('basicUser').workList[0].workDescribe
+    // })
+    // }
 
   },
 
@@ -121,22 +118,25 @@ Page({
             favor: res.data.uspecialty
           }
         })
+
         if (res.data.workList[0]){
           that.setData({
-            workList: [{
-              startTime: res.data.workList[0].beginTime,
-              endTime: res.data.workList[0].endTime,
-              job: "营地指导员",
-              detail: res.data.workList[0].workDescribe
-            },
-            // {
-            //   startTime: "xxxx.x",
-            //   endTime: "xxxx.x",
+            // workList: [{
+            //   startTime: res.data.workList[0].beginTime,
+            //   endTime: res.data.workList[0].endTime,
             //   job: "营地指导员",
-            //   detail: "负责很多很多"
-            // }
-            ]
+            //   detail: res.data.workList[0].workDescribe
+            // },
+            // // {
+            // //   startTime: "xxxx.x",
+            // //   endTime: "xxxx.x",
+            // //   job: "营地指导员",
+            // //   detail: "负责很多很多"
+            // // }
+            // ]
+            workList: that.data.workList.concat(res.data.workList),
           })
+
         }
       },
       fail(e) {
@@ -159,10 +159,10 @@ Page({
             // favor: "平时喜欢看编程书籍以及名人博客，至今看过犀牛书、JavaScript高级程序设计3、JavaScript设计模式、You Don't Know JS系列等，时常关注阮一峰、张鑫旭、王福朋等大神博客。基础知识扎实，擅长vue.js，有个人和公司的项目经验支撑，也可转向原生或其他框架学习。"
           },
           positionList: [{
-            startTime: "xxxx.x",
+            beginTime: "xxxx.x",
             endTime: "xxxx.x",
             job: "营地指导员",
-            detail: "负责很多很多"
+            workDescribe: "负责很多很多"
             },
             // {
             //   startTime: "2018.6",

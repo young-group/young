@@ -5,12 +5,12 @@
   <view class="resume-item">
     <view class="status-time">
       <view class="dot"></view>
-      <text class="c8">{{item.startTime}}-{{item.endTime}}</text>
+      <text class="c8">{{item.beginTime}}-{{item.endTime}}</text>
     </view>
     <view class="status-text">
       <view>{{item.job}}</view>
       <view class="position-desc">
-        {{item.detail}}
+        {{item.workDescribe}}
       </view>
     </view>
   </view>

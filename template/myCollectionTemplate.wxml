@@ -4,11 +4,11 @@
       <image class="item-logo" src="{{item.clogo}}" />
       <view class="item-desc">
         <view class="item-desc-l">
-          <view class="item-title text-ellipsis">{{item.companyName}}</view>
+          <view class="item-title text-ellipsis">{{item.company.companyName}}</view>
           <view class="item-info">
             <text class="item-pos">{{item.positionName}}</text>
           </view>
-          <view class="item-time">2019-04-10</view>
+          <view class="item-time">{{item.endtime}}</view>
         </view>
 
         <view class="item-desc-r">

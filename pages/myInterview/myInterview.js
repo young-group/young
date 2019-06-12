@@ -122,88 +122,54 @@ Page({
   loadData: function(e) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/deliver/getDeliver',
+      url: 'http://localhost:8080/enroll/get1',
+      data: {
+        uid: wx.getStorageSync('basicUser').uid,
+      },
       method: 'post',
       header: {
-        'content-type': 'application/json',
+        'content-type': 'application/x-www-form-urlencoded',
       },
       success(res) {
         console.log(res.data);
+        var enroll = res.data[0];
         that.setData({
           information: {
             uid: "",
           },
           positionList1: [{
-              name: "xxx营地",
-              job: "营地指导员",
-              place: "南山科技园讯美广场1号楼6楼6105",
-              status: "已投递"
-            },
-            {
-              name: "xxx营地",
-              job: "营地指导员",
-              place: "南山科技园讯美广场1号楼6楼6105",
-              status: "已投递"
-            }
+            name: enroll.position.company.companyName,
+            job: enroll.position.positionName,
+            place: enroll.position.workAddress,
+            status: enroll.status
+          },
+          // {
+          //   name: "xxx营地",
+          //   job: "营地指导员",
+          //   place: "南山科技园讯美广场1号楼6楼6105",
+          //   status: "已投递"
+          // }
           ]
         })
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          title: '操作失败',
+          icon: 'none',
+          duration: 2000
+        });
         that.setData({
           information: {
             uid: "",
           },
           positionList1: [{
-            name: "甘肃行知成教育科技有限公司",
+            name: "公司名",
             job: "志愿者",
-            place: "甘肃省内、省外",
-              status: "已投递"
-            },
-            {
-              name: "xxxx营地",
-              job: "营地指导员",
-              place: "南山科技园讯美广场1号楼6楼6105",
-              status: "已面试"
-            },
-            {
-              name: "xxxxx营地",
-              job: "营地指导员",
-              place: "南山科技园讯美广场1号楼6楼6105",
-              status: "面试通过"
-            },
-            {
-              name: "xxxxxx营地",
-              job: "营地指导员",
-              place: "南山科技园讯美广场1号楼6楼6105",
-              status: "已投递"
-            }
+            place: "工作地点",
+            status: "投递状态"
+          },
           ],
-          positionList2: [{
-            name: "xx营地",
-            job: "营地指导员",
-            place: "南山科技园讯美广场1号楼6楼6105",
-            status: "不合适"
-          },
-          {
-            name: "xxxx营地",
-            job: "营地指导员",
-            place: "南山科技园讯美广场1号楼6楼6105",
-            status: "已查看"
-          },
-          {
-            name: "xxxxx营地",
-            job: "营地指导员",
-            place: "南山科技园讯美广场1号楼6楼6105",
-            status: "面试通过"
-          },
-          {
-            name: "xxxxxx营地",
-            job: "营地指导员",
-            place: "南山科技园讯美广场1号楼6楼6105",
-            status: "待面试"
-          }
-          ]
         })
       }
     })
@@ -222,6 +188,60 @@ Page({
         ani1:'',
       })
     }
+
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8080/enroll/get1',
+      data: {
+        uid: wx.getStorageSync('basicUser').uid,
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success(res) {
+        console.log(res.data);
+        var enroll = res.data[0];
+        that.setData({
+          information: {
+            uid: "",
+          },
+          positionList1: [{
+            name: enroll.position.company.companyName,
+            job: enroll.position.positionName,
+            place: enroll.position.workAddress,
+            status: enroll.status
+          },
+          // {
+          //   name: "xxx营地",
+          //   job: "营地指导员",
+          //   place: "南山科技园讯美广场1号楼6楼6105",
+          //   status: "已投递"
+          // }
+          ]
+        })
+      },
+      fail(e) {
+        console.log(e.errMsg)
+        wx.showToast({
+          title: '操作失败',
+          icon: 'none',
+          duration: 2000
+        });
+        that.setData({
+          information: {
+            uid: "",
+          },
+          positionList1: [{
+            name: "公司名",
+            job: "志愿者",
+            place: "工作地点",
+            status: "投递状态"
+          },
+          ],
+        })
+      }
+    })
   },
 
   swichNav2: function(e) {
@@ -236,6 +256,59 @@ Page({
       })
     }
 
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8080/enroll/get2',
+      data: {
+        uid: wx.getStorageSync('basicUser').uid,
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success(res) {
+        console.log(res.data);
+        var enroll = res.data[0];
+        that.setData({
+          information: {
+            uid: "",
+          },
+          positionList2: [{
+            name: enroll.position.company.companyName,
+            job: enroll.position.positionName,
+            place: enroll.position.workAddress,
+            status: enroll.status
+          },
+          // {
+          //   name: "xxx营地",
+          //   job: "营地指导员",
+          //   place: "南山科技园讯美广场1号楼6楼6105",
+          //   status: "已投递"
+          // }
+          ]
+        })
+      },
+      fail(e) {
+        console.log(e.errMsg)
+        wx.showToast({
+          title: '操作失败',
+          icon: 'none',
+          duration: 2000
+        });
+        that.setData({
+          information: {
+            uid: "",
+          },
+          positionList2: [{
+            name: "公司名",
+            job: "志愿者",
+            place: "工作地点",
+            status: "投递状态"
+          },
+          ],
+        })
+      }
+    })
   },
 
 })

@@ -9,6 +9,7 @@ Page({
   data: {
     curid: '',
     isClick: true,
+    positionList:[]
   },
   haveSave(e) {
     console.log("---------"+this.data.isClick)
@@ -97,16 +98,8 @@ Page({
       success(res) {
         console.log(res.data)
         if (res.data[0]) {
-          var positions = res.data;
           that.setData({
-            positionList: [{
-              companyName: positions[0].company.companyName,
-              positionName: positions[0].positionName,
-              salary: positions[0].salary,
-              clogo: positions[0].company.clogo,
-              pid: positions[0].pid
-            },
-            ]
+            positionList: that.data.positionList.concat(res.data),
           })
         }
       },
