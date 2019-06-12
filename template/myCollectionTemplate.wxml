@@ -14,7 +14,7 @@
         <view class="item-desc-r">
           <view>
             <!--收藏-->
-            <image class='button-collect' src="{{isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='{{item.pid}}' bindtap="haveSave"></image>
+            <image class='button-collect' src="{{!isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='{{item.pid}}' bindtap="haveSave"></image>
           </view>
           <view class="item-collection">{{item.salary}}</view>
 

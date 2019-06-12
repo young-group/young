@@ -12,61 +12,94 @@ Page({
     positionList:[]
   },
   haveSave(e) {
-    console.log("---------"+this.data.isClick)
-    console.log(e.currentTarget.dataset.pid)
     var that=this
     that.setData({
       curid: e.currentTarget.dataset.pid
     })
-    if (!this.data.isClick == true) {
-
-      wx.request({
-        url: 'http://localhost:8080/collection/put',
-        data: {
-          uid: wx.getStorageSync('basicUser').uid,
-          pid: e.currentTarget.dataset.pid
-        },
-        method: 'get',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded',
-        },
-        success(res) {
-          console.log(res.data)
-        },
-        fail(e) {
-          console.log(e.errMsg)
+   
+    wx.showModal({
+      title: '提示',
+      content: '确定取消收藏?',
+      success: function (sm) {
+        if (sm.confirm) {
+          var array=that.data.positionList
+          var pid = e.currentTarget.dataset.pid
+           for(var i=0;i<array.length;i++){
+             console.log(array[i])
+             if (pid==array[i].pid){
+               array.splice(i,1)
+             }
         }
-      })
-      wx.showToast({
-        title: '已收藏',
-      });
-    } else {
-
-      wx.request({
-        url: 'http://localhost:8080/collection/delete',
-        data: {
-          uid: wx.getStorageSync('basicUser').uid,
-          pid: e.currentTarget.dataset.pid
-        },
-        method: 'get',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded',
-        },
-        success(res) {
-          console.log(res.data)
-        },
-        fail(e) {
-          console.log(e.errMsg)
-        }
-      })
-      wx.showToast({
-        title: '已取消',
-      });
-    }
-
-    this.setData({
-      isClick: !this.data.isClick
+         that.setData({
+           positionList:array
+         })
+          wx.request({
+            url: 'http://localhost:8080/collection/delete',
+            data: {
+              uid: wx.getStorageSync('basicUser').uid,
+              pid: e.currentTarget.dataset.pid
+            },
+            method: 'get',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded',
+            },
+            success(res) {
+            }
+          }) 
+        } 
+      }
     })
+    return
+
+    // if (!this.data.isClick == true) {
+
+    //   wx.request({
+    //     url: 'http://localhost:8080/collection/put',
+    //     data: {
+    //       uid: wx.getStorageSync('basicUser').uid,
+    //       pid: e.currentTarget.dataset.pid
+    //     },
+    //     method: 'get',
+    //     header: {
+    //       'content-type': 'application/x-www-form-urlencoded',
+    //     },
+    //     success(res) {
+    //       console.log(res.data)
+    //     },
+    //     fail(e) {
+    //       console.log(e.errMsg)
+    //     }
+    //   })
+    //   wx.showToast({
+    //     title: '已收藏',
+    //   });
+    // } else {
+       
+    //   wx.request({
+    //     url: 'http://localhost:8080/collection/delete',
+    //     data: {
+    //       uid: wx.getStorageSync('basicUser').uid,
+    //       pid: e.currentTarget.dataset.pid
+    //     },
+    //     method: 'get',
+    //     header: {
+    //       'content-type': 'application/x-www-form-urlencoded',
+    //     },
+    //     success(res) {
+    //       console.log(res.data)
+    //     },
+    //     fail(e) {
+    //       console.log(e.errMsg)
+    //     }
+    //   })
+    //   wx.showToast({
+    //     title: '已取消',
+    //   });
+    // }
+
+    // this.setData({
+    //   isClick: !this.data.isClick
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
