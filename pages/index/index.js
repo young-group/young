@@ -38,6 +38,7 @@ Page({
    * 查看职位详情
    */
   viewPositionDetail: (e) => {
+    console.log(e)
     app.navTo('positionDetail', {positionId: e.currentTarget.dataset.pid})
   },
   /**
@@ -59,6 +60,13 @@ Page({
       success(res) {
         if(res.data==null||res.data==""){
           wx.hideLoading();
+          wx.showToast({
+            title: '无更多数据',
+            icon:'none',
+            duration:2000
+          
+          })
+          
           return 
         }
         that.setData({

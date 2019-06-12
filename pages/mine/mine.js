@@ -135,11 +135,6 @@ Page({
                       fail: function() {
                         console.log('系统错误')
                         wx.hideLoading()
-                        wx.showToast({
-                          title: '数据获取失败~',
-                          icon: 'none',
-                          duration: 2000
-                        });
                       }
                     })
                   },

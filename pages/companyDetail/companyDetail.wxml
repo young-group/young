@@ -3,22 +3,22 @@
 
   <view class="company" >
   
-    <image wx:if='{{companyLogo}}' class="com-logo" src="{{companyLogo}}" />
-    <view class="aa">行知成教育科技有限公司</view>
+    <image wx:if='{{companyLogo}}' class="com-logo" src="{{company.clogo}}" />
+    <view class="aa">{{company.companyName}}</view>
   </view>
 
   <!-- 职位描述-start -->
   <view class="position-desc">
     <view class="header">公司介绍</view>
     <view class="content">
-      <view>行知成教育科技有限公司主要负责青少年的校外成长教育，通过研学旅行的形式，带着孩子们在户外体验另一种“课堂”。寓教于乐，引导学生主动适应社会，促进书本知识和生活经验的深度融合。</view>
+      <view>{{company.companyIntroduce}}</view>
     </view>
   </view>
   <!-- 职位描述-end -->
   <view class="position-desc">
     <view class="header">公司地址</view>
     <view class="content">
-      <view>北京朝阳区</view>
+      <view>{{company.companyAddress}}</view>
     </view>
   </view>
 

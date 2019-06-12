@@ -1,8 +1,8 @@
 <template name='position_link'>
-  <view wx:for='{{positionList}}' wx:key='item.positionId' class='list-item' data-pid='{{item.positionId}}' bindtap="viewPositionDetail">
+  <view wx:for='{{positionList}}' wx:key='item.pid' class='list-item' data-pid='{{item.pid}}' bindtap="viewPositionDetail">
     <image class='com-logo' src='{{item.company.clogo}}'></image>
     <view class='item-desc'>
-      <text class='item-title'>{{item.company.companyName}}</text>
+      <text class='item-title'>{{item.positionName}}</text>
       <view class='item-info'>
         <text class='item-pos text-ellipsis'>{{item.workAddress}}</text>
         <text class='item-salary'>{{item.salary}}</text>
