@@ -8,9 +8,10 @@ Page({
    */
   data: {
     curid: '',
-    isClick: false,
+    isClick: true,
   },
   haveSave(e) {
+    console.log("---------"+this.data.isClick)
     console.log(e.currentTarget.dataset.pid)
     var that=this
     that.setData({

@@ -22,14 +22,11 @@ Page({
   },
   //下拉触发事件
   onPullDownRefresh: function () {
-    this.loadData(this.data.pageNo )
+    this.loadData(1)
   },
   //上拉拉到底触发的事件
-  onReachBottom: function () {
-    if(this.data.pageNo-1==0){
-         return
-    }
-    this.loadData(this.data.pageNo-1)
+  onReachBottom: function () {  
+    this.loadData(this.data.pageNo + 1)
   },
 
   //事件处理函数
@@ -49,6 +46,10 @@ Page({
    * @param {Number} pageNo 自定义的页码请求
    */
   loadData: function (e) {
+
+    wx.showLoading({
+            title: '加载中',
+   }) 
     var that = this;
     wx.request({
       url: 'http://localhost:8080/position/getPositionOfPage/'+e, // 仅为示例，并非真实的接口地址
@@ -56,34 +57,24 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        if(res.data==null||res.data==""){
+          wx.hideLoading();
+          return 
+        }
         that.setData({
-          positionList: [{
-            companyLogo:"sss",
-            companyName: "行知成教育科技有限公司",
-            workAddress: "甘肃省内、省外",
-            salary: "80-100",
-            beginTime: 2019
-          }],
+          positionList: that.data.positionList.concat(res.data),
+    
           pageNo:e
           
-        })
+        }),
+        wx.hideLoading();
       },
       fail(err) {
         wx.showToast({
           title: '操作失败',
           icon: 'none',
           duration: 2000
-        }),    
-        that.setData({
-          positionList: [{
-            companyLogo: "sss",
-            companyName: "行知成教育科技有限公司",
-            workAddress: "甘肃省内、省外",
-            salary: "80-100",
-            beginTime: 2019
-          }
-          ]
-      })
+        })
       }
     })
   },

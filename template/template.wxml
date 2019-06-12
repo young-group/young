@@ -1,13 +1,13 @@
 <template name='position_link'>
   <view wx:for='{{positionList}}' wx:key='item.positionId' class='list-item' data-pid='{{item.positionId}}' bindtap="viewPositionDetail">
-    <image class='com-logo' src='{{item.companyLogo}}'></image>
+    <image class='com-logo' src='{{item.company.clogo}}'></image>
     <view class='item-desc'>
-      <text class='item-title'>{{item.companyFullName}}</text>
+      <text class='item-title'>{{item.company.companyName}}</text>
       <view class='item-info'>
-        <text class='item-pos text-ellipsis'>{{item.city}}</text>
+        <text class='item-pos text-ellipsis'>{{item.workAddress}}</text>
         <text class='item-salary'>{{item.salary}}</text>
       </view>
-      <text class='item-time'>{{item.createTime}}</text>
+      <text class='item-time'>{{item.beginTime}}</text>
     </view>
   </view>
 </template>
