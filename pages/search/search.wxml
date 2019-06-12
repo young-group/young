@@ -3,6 +3,7 @@
 <view class="search">
   <view class="inputer">
     <view class="l-button">
+      <text class="city">深圳</text>
       <image class="arrow-down" src="../../static/icon/arrow_down.png"></image>
     </view>
     <view class="r-input">

@@ -257,7 +257,7 @@
 }
 /* 面试评价-end */
 
-.fix-btn {
+/* .fix-btn {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -267,15 +267,15 @@
   padding: 12px 4%;
   line-height: 44px;
   background-color: rgba(255, 255, 255, 0.8)
-}
+} */
 .fix-btn1 {
   position: fixed;
   bottom: 0;
-  left: 160px;
+  /* left: 160px; */
   z-index: 10;
   height: 44px;
-  width: 43%;
-  padding: 12px 4%;
+  width: 96%;
+  padding: 12px 5px 5px 5px;
   line-height: 44px;
   background-color: rgba(255, 255, 255, 0.8)
 }

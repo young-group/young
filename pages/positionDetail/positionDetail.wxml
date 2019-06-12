@@ -2,10 +2,10 @@
 <view class="position-detail">
   <view class="pos-title">
     <view class="title text-ellipsis">{{position.positionName}}</view>
-    <view class="collection-icon">
+    <view class="collection-icon" bindtap="haveCollect" data-pid="{{position.company.cid}}">
       <image wx:if="{{haveCollect == true}}" class="icon" src="../../static/icon/star.png" />
       <image wx:else class="icon" src="../../static/icon/star_o.png" />
-      <text class="text">{{haveCollect == true ? '已收藏' : '未收藏'}}</text>
+      <text class="text">{{haveCollect == true ? '已收藏' : '收藏'}}</text>
     </view>
   </view>
   <view class="company" bindtap="viewCompanyDetail" data-pid="{{position.company.cid}}">
@@ -62,11 +62,11 @@
   </view>
   <!-- 职位描述-end -->
 
-  <view class="fix-btn"  bindtap="haveCollect" data-pid="{{position.company.cid}}">
+  <!-- <view class="fix-btn"  bindtap="haveCollect" data-pid="{{position.company.cid}}">
     <view class="deliver-resume">
     <text class="text">{{haveCollect == true ? '已收藏' : '未收藏'}}</text>
       </view>
-  </view>
+  </view> -->
    <view class="fix-btn1"  bindtap="haveEnroll" data-pid="{{position.company.cid}}">
     <view class="deliver-resume"> <text class="text">{{haveEnroll == true ? '已报名' : '报名'}}</text>
     </view>
