@@ -21,6 +21,12 @@
   height: 30px;
   width: 70%;
   text-align: center;
+
+  /* background: white; */
+  /* height: 28px; */
+  /* width: 100%; */
+  /* text-align: center; */
+  /* margin-top: 2px; */
 }
 
 .btn {

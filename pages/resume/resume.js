@@ -94,11 +94,9 @@ Page({
   loadData: function(e) {
 
     var that = this;
+    var openid=wx.getStorageSync('basicUser').openid
     wx.request({
-      url: 'http://localhost:8080/user/get',
-      data: {
-        basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),
-        },
+      url: 'http://localhost:8080/users/' + openid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -119,7 +117,7 @@ Page({
           }
         })
 
-        if (res.data.workList[0]){
+        if (res.data.workList){
           that.setData({
             // workList: [{
             //   startTime: res.data.workList[0].beginTime,

@@ -28,7 +28,7 @@
   align-items: center;
   line-height: 1;
   font-size: 13px;
-  height: 25px;
+  height: 30px;
 }
 
 .zan-cell::after {
@@ -44,7 +44,7 @@
   flex: 1;
   position: relative;
   font:100;
-  line-height: 25px;
+  line-height: 13px;
 }
 .zan-cell__ft {
   position: relative;
@@ -88,9 +88,10 @@
 }
 
 .img{
-    width: 30rpx;
-    height:30rpx;
+    width: 40rpx;
+    height:40rpx;
     margin-right:10px;
+    margin-bottom: -3px;
 }
 
 .show-popup{

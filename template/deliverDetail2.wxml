@@ -1,28 +1,27 @@
 <template name='allDeliver_link2'>
   <!-- <swiper-item> -->
-    <block  wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}'>
+  <block wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}'>
 
 
-      <view class="content-list">
-      
-        <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail">
-          <view class="content-item-state">
-            <view class="content-item-title text-ellipsis">{{item.name}}</view>
-            <text class="content-item-status">【 {{item.status}} 】</text>
-          </view>
-          <view class="content-item-desc text-ellipsis">{{item.job}}</view>
-          <view class="content-item-state">
-            <text class="content-item-time">工作地点：{{item.place}}</text>
-          </view>
+    <view class="content-list">
+
+      <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail">
+        <view class="content-item-state">
+          <view class="content-item-title text-ellipsis">{{item.position.company.companyName}}</view>
+          <text class="content-item-status">【 {{item.status}} 】</text>
         </view>
-
-        <view wx:else class="content-empty">
-          <text class="text">暂无记录~</text>
+        <view class="content-item-desc text-ellipsis">{{item.position.positionName}}</view>
+        <view class="content-item-state">
+          <text class="content-item-time">工作地点：{{item.position.workAddress}}</text>
         </view>
-        
       </view>
 
+    </view>
 
-    </block>
+
+  </block>
+  <view wx:if="{{positionList2.length == 0}}" class="content-empty">
+    <text class="text">暂无记录，赶快报名吧~</text>
+  </view>
   <!-- </swiper-item> -->
 </template>

@@ -112,7 +112,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/user/post1',
+      url: 'http://localhost:8080/users/post1',
       method: 'get',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),
@@ -122,6 +122,9 @@ Page({
       },
       success(res) {
         console.log(res.data);
+        wx.showToast({
+          title: '已提交',
+        });
         that.setData({
           information: {
             result: res.data,
@@ -130,6 +133,10 @@ Page({
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          icon:none,
+          title: '操作失败',
+        });
       }
     })
   },

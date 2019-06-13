@@ -9,6 +9,12 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  width: 380rpx;
+  /* display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  word-break:break-all; */
 }
 /**  工具样式-end  **/
 

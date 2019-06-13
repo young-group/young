@@ -97,8 +97,8 @@ button{
 }
 
 .img{
-    width: 30rpx;
-    height:30rpx;
+    width: 40rpx;
+    height:40rpx;
     margin-right:10px;
 }
 

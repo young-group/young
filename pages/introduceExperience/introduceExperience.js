@@ -112,7 +112,7 @@ Page({
     
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/user/post2',
+      url: 'http://localhost:8080/users/post2',
       method: 'get',
       data: {
         experienceJson: JSON.stringify(wx.getStorageSync('experience')),
@@ -188,12 +188,10 @@ Page({
 
   },
   formReset: function () {
+    var id = wx.getStorageSync('basicUser').workList[0].id
     wx.request({
-      url: 'http://localhost:8080/user/delete',
-      method: 'get',
-      data: {
-        id: wx.getStorageSync('basicUser').workList[0].id,
-      },
+      url: 'http://localhost:8080/users/'+id,
+      method: 'delete',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
       },

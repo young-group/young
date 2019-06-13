@@ -70,6 +70,13 @@ Page({
    */
   formSubmit: function (e) {
     console.log(e.detail.value.content);
+    if (e.detail.value.content==""){
+      wx.showToast({
+        icon: 'none',
+        title: '请填写意见',
+      });
+      return
+    }
     var that=this
     that.setData({
         'feedBack.content':e.detail.value.content
@@ -77,12 +84,12 @@ Page({
 
 
     console.log(that.data.feedBack.content + "---------")
-
     wx.request({
-      url: 'http://localhost:8080/feedBack/put',
-      method: 'get',
+      url: 'http://localhost:8080/feedBacks/',
+      method: 'post',
       data: {
-        feedBackJson: JSON.stringify(that.data.feedBack),
+        content: that.data.feedBack.content,
+        uid: that.data.feedBack.uid
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -96,6 +103,7 @@ Page({
       fail(e) {
         console.log(e.errMsg)
         wx.showToast({
+          icon:'none',
           title: '失败啦',
         });
       }

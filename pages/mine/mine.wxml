@@ -18,7 +18,7 @@
     <view class="zan-cell zan-cell--access" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
       <view class="zan-cell__bd">
         <image src="{{item.icon}}" class="img"></image>
-        <text>{{ item.text }}</text>
+        <text style="font-size: 30rpx;">{{ item.text }}</text>
       </view>
     </view>
     <view class='zan-cell'></view>

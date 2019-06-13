@@ -4,7 +4,7 @@
   <view class="collection-list">
 
 
-    <view class="collection-item">
+    <!-- <view class="collection-item">
       <image class="item-logo" src="../../static/images/4.jpg" />
       <view class="item-desc">
         <view class="item-desc-l">
@@ -15,14 +15,14 @@
           <view class="item-time">2019-04-10</view>
         </view>
         <view class="item-desc-r">
-          <view>
+          <view> -->
             <!--收藏-->
-            <image class='button-collect' src="{{isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='100' bindtap="haveSave"></image>
+            <!-- <image class='button-collect' src="{{isClick?'../../static/icon/star.png':'../../static/icon/star_o.png'}}" data-pid='100' bindtap="haveSave"></image>
           </view>
           <view class="item-collection">80-100元/日</view>
         </view>
       </view>
-    </view>
+    </view> -->
 
 
     <!-- <view class="collection-item"> -->
@@ -35,3 +35,4 @@
 
   </view>
 </view>
+
