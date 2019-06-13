@@ -70,6 +70,13 @@ Page({
    */
   formSubmit: function (e) {
     console.log(e.detail.value.content);
+    if (e.detail.value.content==""){
+      wx.showToast({
+        icon: 'none',
+        title: '请填写意见',
+      });
+      return
+    }
     var that=this
     that.setData({
         'feedBack.content':e.detail.value.content
@@ -96,6 +103,7 @@ Page({
       fail(e) {
         console.log(e.errMsg)
         wx.showToast({
+          icon:'none',
           title: '失败啦',
         });
       }

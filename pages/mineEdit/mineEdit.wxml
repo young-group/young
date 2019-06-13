@@ -9,10 +9,10 @@
 
     <view class="itemView ">
       <text decode="true"> 出生年月:</text>
-      <view class="input">
+      <view class="input" >
         <picker mode="date" value="{{ubirthday}}" start="1900-1-1" end="2100-1-1" bindchange="bindDateChange">
-          <view class="">
-            <input placeholder='请选择日期' disabled='true' name="ubirthday" type="text" class="input" value="{{ubirthday}}" />
+          <view class=''>
+            <input placeholder='请选择日期' disabled='true' name="ubirthday" type="text" class="input" value="               {{ubirthday}}" />
           </view>
         </picker>
       </view>

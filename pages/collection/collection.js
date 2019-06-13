@@ -126,6 +126,12 @@ Page({
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          title: '数据加载失败',
+          icon: 'none',
+          duration: 2000
+
+        })
       }
     })
 

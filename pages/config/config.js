@@ -6,17 +6,17 @@ Page({
        * 页面的初始数据
        */
       data: {
-        mynumber: "请获取手机号" ,
+        mynumber: "" ,
         hidePopup: true,
         userInfo: App.globalData.userInfo,
         items: [
           {
-            icon: '../../images/mine/phone.png',
+            icon: '../../static/images/mine/aboutus.png',
             text: '关于我们',
             path: '/pages/aboutus/aboutus'
           },
           {
-            icon: '../../images/mine/Fingerprint.png',
+            icon: '../../static/images/mine/feedback.png',
             text: '意见反馈',
             path: '/pages/feedBack/feedBack'
           },

@@ -12,29 +12,29 @@ Page({
     editTrue: true,
     showModalStatus: false,
     items: [{
-        icon: '../../images/mine/Fingerprint.png',
+      icon: '../../static/images/mine/myresume.png',
         text: '我的简历',
         path: '/pages/resume/resume'
       },
       {
-        icon: '../../images/mine/ok.png',
+        icon: '../../static/images/mine/enroll.png',
         text: '我的报名',
         // path: '/pages/deliver/deliver'
         path: '/pages/myInterview/myInterview'
 
       },
       {
-        icon: '../../images/mine/order.png',
+        icon: '../../static/images/mine/collection.png',
         text: '收藏',
         path: '/pages/collection/collection'
       },
       {
-        icon: '../../images/mine/phone.png',
+        icon: '../../static/images/mine/camp.png',
         text: '营地入驻（商家入口）',
         path: ''
       },
       {
-        icon: '../../images/mine/phone.png',
+        icon: '../../static/images/mine/config.png',
         text: '设置',
         path: '/pages/config/config'
       },
