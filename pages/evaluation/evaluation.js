@@ -110,6 +110,9 @@ Page({
       },
       success(res) {
         console.log(res.data);
+        wx.showToast({
+          title: '已提交',
+        });
         that.setData({
           information: {
             result: res.data.res,

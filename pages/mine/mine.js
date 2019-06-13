@@ -51,7 +51,7 @@ Page({
     if(tmp){
       var that = this;
       that.setData({
-        editTrue: true,
+        editTrue: false,
       })
     }
     
@@ -127,6 +127,10 @@ Page({
                           wx.setStorageSync('basicUser', basicUser_)
                           App.globalData.basicUser = basicUser_;
                           // console.log(wx.getStorageSync('basicUser').uname+"--------")
+                          var that = this;
+                          that.setData({
+                            editTrue: false,
+                          })
                           wx.hideLoading()
                         } else {
                           console.log('解密失败')

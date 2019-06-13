@@ -1,5 +1,5 @@
 // pages/collection/collection.js
-
+const app = getApp()
 
 Page({
 
@@ -9,42 +9,41 @@ Page({
   data: {
     curid: '',
     isClick: true,
-    positionList:[]
+    positionList: []
   },
   haveSave(e) {
-    var that=this
+    var that = this
     that.setData({
       curid: e.currentTarget.dataset.pid
     })
-   
+
     wx.showModal({
       title: '提示',
       content: '确定取消收藏?',
-      success: function (sm) {
+      success: function(sm) {
         if (sm.confirm) {
-          var array=that.data.positionList
+          var array = that.data.positionList
           var pid = e.currentTarget.dataset.pid
-           for(var i=0;i<array.length;i++){
-             console.log(array[i])
-             if (pid==array[i].pid){
-               array.splice(i,1)
-             }
-        }
-         that.setData({
-           positionList:array
-         })
+          for (var i = 0; i < array.length; i++) {
+            console.log(array[i])
+            if (pid == array[i].pid) {
+              array.splice(i, 1)
+            }
+          }
+          that.setData({
+            positionList: array
+          })
           var uid = wx.getStorageSync('basicUser').uid
           var pid = e.currentTarget.dataset.pid
           wx.request({
-            url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+            url: 'http://localhost:8080/collections/' + uid + '/' + pid,
             method: 'delete',
             header: {
               'content-type': 'application/x-www-form-urlencoded',
             },
-            success(res) {
-            }
-          }) 
-        } 
+            success(res) {}
+          })
+        }
       }
     })
     return
@@ -72,7 +71,7 @@ Page({
     //     title: '已收藏',
     //   });
     // } else {
-       
+
     //   wx.request({
     //     url: 'http://localhost:8080/collection/delete',
     //     data: {
@@ -107,7 +106,7 @@ Page({
     var that = this;
     var uid = wx.getStorageSync('basicUser').uid
     wx.request({
-      url: 'http://localhost:8080/collections/'+uid,
+      url: 'http://localhost:8080/collections/' + uid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -182,7 +181,7 @@ Page({
 
   },
 
-  focusFavoriteTab: function (e) {
+  focusFavoriteTab: function(e) {
     // console.log("---------")
     // var that = this;
     // var isFocus = that.data.isFocus;
@@ -211,6 +210,15 @@ Page({
     //     });
     //   });
     // }
-  }
-  
+  },
+  /**
+   * 查看职位详情
+   */
+  viewPositionDetail: (e) => {
+    console.log(e)
+    app.navTo('positionDetail', {
+      positionId: e.currentTarget.dataset.pid
+    })
+  },
+
 })

@@ -1,5 +1,8 @@
 <template name='collection_link'>
-  <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}'>
+    <view wx:if="{{positionList.length == 0}}" class="content-empty">
+      <text class="text">暂无记录~</text>
+    </view>
+  <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}' bindtap="viewPositionDetail">
     <view class="collection-item">
       <image class="item-logo" src="{{item.clogo}}" />
       <view class="item-desc">
@@ -20,9 +23,6 @@
 
         </view>
       </view>
-    </view>
-    <view wx:if="{{positionList.length == 0}}" class="content-empty">
-      <text class="text">暂无记录~</text>
     </view>
   </view>
 </template>

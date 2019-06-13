@@ -1,6 +1,6 @@
 <template name='allDeliver_link2'>
   <!-- <swiper-item> -->
-  <block wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}'>
+  <view wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}' bindtap="viewPositionDetail">
 
 
     <view class="content-list">
@@ -19,7 +19,7 @@
     </view>
 
 
-  </block>
+  </view>
   <view wx:if="{{positionList2.length == 0}}" class="content-empty">
     <text class="text">暂无记录，赶快报名吧~</text>
   </view>

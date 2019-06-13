@@ -211,5 +211,13 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid
 
   },
-
+  /**
+   * 查看职位详情
+   */
+  viewPositionDetail: (e) => {
+    console.log(e)
+    app.navTo('positionDetail', {
+      positionId: e.currentTarget.dataset.pid
+    })
+  },
 })
