@@ -100,8 +100,8 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/user/post',
-      method: 'get',
+      url: 'http://localhost:8080/users/post',
+      method: 'post',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),
       },

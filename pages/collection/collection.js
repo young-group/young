@@ -33,13 +33,11 @@ Page({
          that.setData({
            positionList:array
          })
+          var uid = wx.getStorageSync('basicUser').uid
+          var pid = e.currentTarget.dataset.pid
           wx.request({
-            url: 'http://localhost:8080/collection/delete',
-            data: {
-              uid: wx.getStorageSync('basicUser').uid,
-              pid: e.currentTarget.dataset.pid
-            },
-            method: 'get',
+            url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+            method: 'delete',
             header: {
               'content-type': 'application/x-www-form-urlencoded',
             },
@@ -107,18 +105,16 @@ Page({
   onLoad: function(option) {
     // console.log(wx.getStorageSync('jobData'));
     var that = this;
+    var uid = wx.getStorageSync('basicUser').uid
     wx.request({
-      url: 'http://localhost:8080/collection/get',
-      data: {
-        uid: wx.getStorageSync('basicUser').uid,
-      },
+      url: 'http://localhost:8080/collections/'+uid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
       },
       success(res) {
         console.log(res.data)
-        if (res.data[0]) {
+        if (res.data) {
           that.setData({
             positionList: that.data.positionList.concat(res.data),
           })

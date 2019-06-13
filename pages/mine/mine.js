@@ -51,7 +51,7 @@ Page({
     if(tmp){
       var that = this;
       that.setData({
-        editTrue: false,
+        editTrue: true,
       })
     }
     
@@ -98,9 +98,10 @@ Page({
                       code: code
                     })
                     //3.请求自己的服务器，解密用户信息 获取unionId等加密信息
+                    
                     wx.request({
-                      url: 'http://localhost:8080/user/get1', //自己的服务接口地址
-                      method: 'post',
+                      url: 'http://localhost:8080/users/getUserInfo', //自己的服务接口地址
+                      method: 'get',
                       header: {
                         'content-type': 'application/x-www-form-urlencoded'
                       },

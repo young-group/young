@@ -7,6 +7,8 @@ Page({
     page: 1,
     ani1: '',
     ani2: '',
+    positionList1:[],
+    positionList2: [],
     //  currentTab: 0,
   },
 
@@ -121,58 +123,61 @@ Page({
 
   loadData: function(e) {
     var that = this;
-    wx.request({
-      url: 'http://localhost:8080/enroll/get1',
-      data: {
-        uid: wx.getStorageSync('basicUser').uid,
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      success(res) {
-        console.log(res.data);
-        var enroll = res.data[0];
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList1: [{
-            name: enroll.position.company.companyName,
-            job: enroll.position.positionName,
-            place: enroll.position.workAddress,
-            status: enroll.status
-          },
-          // {
-          //   name: "xxx营地",
-          //   job: "营地指导员",
-          //   place: "南山科技园讯美广场1号楼6楼6105",
-          //   status: "已投递"
-          // }
-          ]
-        })
-      },
-      fail(e) {
-        console.log(e.errMsg)
-        wx.showToast({
-          title: '操作失败',
-          icon: 'none',
-          duration: 2000
-        });
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList1: [{
-            name: "公司名",
-            job: "志愿者",
-            place: "工作地点",
-            status: "投递状态"
-          },
-          ],
-        })
-      }
-    })
+    var uid = wx.getStorageSync('basicUser').uid
+
+      wx.request({
+        url: 'http://localhost:8080/enrolls/1/' + uid,
+        method: 'get',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+        },
+        success(res) {
+          console.log(res.data);
+          var enroll = res.data[0];
+          that.setData({
+            information: {
+              uid: "",
+            },
+            positionList1: that.data.positionList1.concat(res.data)
+          })
+        },
+        fail(e) {
+          console.log(e.errMsg)
+          wx.showToast({
+            title: '操作失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      })
+
+      wx.request({
+        url: 'http://localhost:8080/enrolls/2/' + uid,
+        method: 'get',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+        },
+        success(res) {
+          console.log(res.data);
+          var enroll = res.data[0];
+          that.setData({
+            information: {
+              uid: "",
+            },
+            positionList2: that.data.positionList2.concat(res.data)
+          })
+        },
+        fail(e) {
+          console.log(e.errMsg)
+          wx.showToast({
+            title: '操作失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      })
+    
+
   },
 
 
@@ -188,60 +193,6 @@ Page({
         ani1:'',
       })
     }
-
-    var that = this;
-    wx.request({
-      url: 'http://localhost:8080/enroll/get1',
-      data: {
-        uid: wx.getStorageSync('basicUser').uid,
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      success(res) {
-        console.log(res.data);
-        var enroll = res.data[0];
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList1: [{
-            name: enroll.position.company.companyName,
-            job: enroll.position.positionName,
-            place: enroll.position.workAddress,
-            status: enroll.status
-          },
-          // {
-          //   name: "xxx营地",
-          //   job: "营地指导员",
-          //   place: "南山科技园讯美广场1号楼6楼6105",
-          //   status: "已投递"
-          // }
-          ]
-        })
-      },
-      fail(e) {
-        console.log(e.errMsg)
-        wx.showToast({
-          title: '操作失败',
-          icon: 'none',
-          duration: 2000
-        });
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList1: [{
-            name: "公司名",
-            job: "志愿者",
-            place: "工作地点",
-            status: "投递状态"
-          },
-          ],
-        })
-      }
-    })
   },
 
   swichNav2: function(e) {
@@ -257,58 +208,8 @@ Page({
     }
 
     var that = this;
-    wx.request({
-      url: 'http://localhost:8080/enroll/get2',
-      data: {
-        uid: wx.getStorageSync('basicUser').uid,
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      success(res) {
-        console.log(res.data);
-        var enroll = res.data[0];
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList2: [{
-            name: enroll.position.company.companyName,
-            job: enroll.position.positionName,
-            place: enroll.position.workAddress,
-            status: enroll.status
-          },
-          // {
-          //   name: "xxx营地",
-          //   job: "营地指导员",
-          //   place: "南山科技园讯美广场1号楼6楼6105",
-          //   status: "已投递"
-          // }
-          ]
-        })
-      },
-      fail(e) {
-        console.log(e.errMsg)
-        wx.showToast({
-          title: '操作失败',
-          icon: 'none',
-          duration: 2000
-        });
-        that.setData({
-          information: {
-            uid: "",
-          },
-          positionList2: [{
-            name: "公司名",
-            job: "志愿者",
-            place: "工作地点",
-            status: "投递状态"
-          },
-          ],
-        })
-      }
-    })
+    var uid = wx.getStorageSync('basicUser').uid
+
   },
 
 })

@@ -84,12 +84,12 @@ Page({
 
 
     console.log(that.data.feedBack.content + "---------")
-
     wx.request({
-      url: 'http://localhost:8080/feedBack/put',
-      method: 'get',
+      url: 'http://localhost:8080/feedBacks/',
+      method: 'post',
       data: {
-        feedBackJson: JSON.stringify(that.data.feedBack),
+        content: that.data.feedBack.content,
+        uid: that.data.feedBack.uid
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',

@@ -21,5 +21,8 @@
         </view>
       </view>
     </view>
+    <view wx:if="{{positionList.length == 0}}" class="content-empty">
+      <text class="text">暂无记录~</text>
+    </view>
   </view>
 </template>
