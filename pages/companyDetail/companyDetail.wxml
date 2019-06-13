@@ -3,7 +3,7 @@
 
   <view class="company" >
   
-    <image wx:if='{{companyLogo}}' class="com-logo" src="{{company.clogo}}" />
+    <image  class="com-logo" src="http://localhost:8080/static/{{company.clogo}}" />
     <view class="aa">{{company.companyName}}</view>
   </view>
 

@@ -10,7 +10,7 @@
   </view>
   <view class="company" bindtap="viewCompanyDetail" data-pid="{{position.company.cid}}">
     <!-- 公司的logo -->
-    <image wx:if='{{posotion.company.clogo}}' class="com-logo" src="{{position.company.clogo}}" />
+    <image  class="com-logo" src="http://localhost:8080/static/{{position.company.clogo}}" />
     <view class="aa">{{position.positionName}}</view>
   </view>
   <!-- 职位详情-start -->

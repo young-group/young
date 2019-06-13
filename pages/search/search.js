@@ -19,26 +19,39 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
+    searchInput:""
   },
   //下拉触发事件
-  onPullDownRefresh: function () {
-    this.loadData(1)
-  },
+  // onPullDownRefresh: function () {
+  //   this.loadData(1)
+  // },
   //上拉拉到底触发的事件
   onReachBottom: function () {
-    this.loadData(this.data.pageNo + 1)
+    wx.showToast({
+      title: '无更多数据',
+      icon: 'none',
+      duration: 2000
+
+    })
   },
 
-  //事件处理函数
-  gotoCustomInfo: function () {
-    this.loadData(this.data.pageNo + 1)
-  },
+  // //事件处理函数
+  // gotoCustomInfo: function () {
+  //   this.loadData(this.data.pageNo + 1)
+  // },
 
+  searchInput:function (e) {
+    this.setData({
+      searchInput: e.detail.value
+    })
+  },
+  searchAction: function (e) {
+    this.loadData(this.data.searchInput)
+  },
   /**
    * 查看职位详情
    */
   viewPositionDetail: (e) => {
-    console.log(e)
     app.navTo('positionDetail', { positionId: e.currentTarget.dataset.pid })
   },
   /**
@@ -47,34 +60,30 @@ Page({
    * @param {Number} pageNo 自定义的页码请求
    */
   loadData: function (e) {
-
     wx.showLoading({
       title: '加载中',
     })
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/position/getPositionOfPage/' + e, // 仅为示例，并非真实的接口地址
+      url: 'http://localhost:8080/es/getPosition/' + e, 
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
         if (res.data == null || res.data == "") {
-          wx.hideLoading();
           wx.showToast({
-            title: '无更多数据',
+            title: '未搜索到数据',
             icon: 'none',
             duration: 2000
-
           })
-
           return
         }
         that.setData({
-          positionList: that.data.positionList.concat(res.data),
-
-          pageNo: e
-
+          positionList: res.data
+          
         }),
+          console.log(that.data.positionList)
+          
           wx.hideLoading();
       },
       fail(err) {
@@ -85,8 +94,5 @@ Page({
         })
       }
     })
-  },
-  onShow: function () {
-    this.loadData(this.data.pageNo)
   }
 })

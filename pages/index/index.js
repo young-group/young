@@ -58,6 +58,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res)
         if(res.data==null||res.data==""){
           wx.hideLoading();
           wx.showToast({
