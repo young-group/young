@@ -25,11 +25,8 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     if(this.data.haveCollect==true){
       wx.request({
-        url: 'http://localhost:8080/collection/delete',
-        data: {
-          'uid': uid,
-          'pid': pid
-        },
+        url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+        method:'delete',
         header: {
           'content-type': 'application/json' // 默认值
         },
@@ -52,11 +49,8 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://localhost:8080/collection/put',
-        data: {
-          'uid': uid,
-          'pid': pid
-        },
+        url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+        method:'post',
         header: {
           'content-type': 'application/json' // 默认值
         },
@@ -92,11 +86,8 @@ Page({
        return 
     }else{
       wx.request({
-        url: 'http://localhost:8080/enroll/put',
-        data: {
-          'uid': uid,
-          'pid': pid
-        },
+        url: 'http://localhost:8080/enrolls/'+pid+'/'+uid,
+        method:'post',
         header: {
           'content-type': 'application/json' // 默认值
         },
@@ -135,11 +126,8 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/collection/get1',
-      data:{
-        'pid':pid,
-        'uid':uid
-      },
+      url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+      method:'get',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -163,11 +151,8 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/enroll/get3',
-      data:{
-        'uid':uid,
-        'pid':pid
-      },
+      url: 'http://localhost:8080/enrolls/'+pid+'/'+uid,
+     method:'get',
       header: {
         'content-type': 'application/json' // 默认值
       },
