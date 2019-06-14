@@ -86,7 +86,7 @@ Page({
        return 
     }else{
       wx.request({
-        url: 'http://localhost:8080/enrolls/'+pid+'/'+uid,
+        url: 'http://localhost:8080/enrolls/willingToEnroll/'+pid+'/'+uid,
         method:'post',
         header: {
           'content-type': 'application/json' // 默认值
@@ -129,11 +129,9 @@ Page({
       url: 'http://localhost:8080/collections/'+uid+'/'+pid,
       method:'get',
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-
-        console.log(" loadCollect:function(pid)")
         if(res.data==true){
           console.log(" loadCollect:function(pid)")
           that.setData({
@@ -151,10 +149,10 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/enrolls/'+pid+'/'+uid,
+      url: 'http://localhost:8080/enrolls//isEnroll/'+pid+'/'+uid,
      method:'get',
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
         if(res.data==true){
