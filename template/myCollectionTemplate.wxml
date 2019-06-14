@@ -2,16 +2,16 @@
     <view wx:if="{{positionList.length == 0}}" class="content-empty">
       <text class="text">暂无记录~</text>
     </view>
-  <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}' bindtap="viewPositionDetail">
+  <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}' >
     <view class="collection-item">
       <image class="item-logo" src="{{item.clogo}}" />
       <view class="item-desc">
         <view class="item-desc-l">
           <view class="item-title text-ellipsis">{{item.company.companyName}}</view>
-          <view class="item-info">
+          <view class="item-info" bindtap="viewPositionDetail">
             <text class="item-pos">{{item.positionName}}</text>
           </view>
-          <view class="item-time">{{item.endtime}}</view>
+          <view class="item-time" bindtap="viewPositionDetail">{{item.endtime}}</view>
         </view>
 
         <view class="item-desc-r">

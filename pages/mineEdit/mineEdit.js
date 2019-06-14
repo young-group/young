@@ -1,4 +1,5 @@
 // pages/mineEdit/mineEdit.js
+const app = getApp()
 Page({
 
   /**
@@ -112,7 +113,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/users/post1',
+      url: app.globalData.urlHead +'users/post1',
       method: 'get',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),

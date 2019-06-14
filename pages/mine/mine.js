@@ -47,7 +47,8 @@ Page({
    */
   onLoad: function(options) {
 
-    var tmp = wx.getStorageSync('userInfo').openId;
+    var tmp = wx.getStorageSync('basicUser');
+    // console.log(tmp+"----------")
     if(tmp){
       var that = this;
       that.setData({
@@ -100,7 +101,7 @@ Page({
                     //3.请求自己的服务器，解密用户信息 获取unionId等加密信息
                     
                     wx.request({
-                      url: 'http://localhost:8080/users/getUserInfo', //自己的服务接口地址
+                      url: App.globalData.urlHead+'users/getUserInfo', //自己的服务接口地址
                       method: 'get',
                       header: {
                         'content-type': 'application/x-www-form-urlencoded'
@@ -127,10 +128,10 @@ Page({
                           wx.setStorageSync('basicUser', basicUser_)
                           App.globalData.basicUser = basicUser_;
                           // console.log(wx.getStorageSync('basicUser').uname+"--------")
-                          var that = this;
-                          that.setData({
-                            editTrue: false,
-                          })
+                          // var that = this;
+                          // that.setData({
+                          //   editTrue: false,
+                          // })
                           wx.hideLoading()
                         } else {
                           console.log('解密失败')

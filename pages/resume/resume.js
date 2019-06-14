@@ -96,7 +96,7 @@ Page({
     var that = this;
     var openid=wx.getStorageSync('basicUser').openid
     wx.request({
-      url: 'http://localhost:8080/users/' + openid,
+      url: app.globalData.urlHead+'users/' + openid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

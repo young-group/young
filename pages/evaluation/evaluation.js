@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -100,7 +101,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/users/post',
+      url: app.globalData.urlHead +'users/post',
       method: 'post',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),

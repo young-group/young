@@ -36,7 +36,7 @@ Page({
           var uid = wx.getStorageSync('basicUser').uid
           var pid = e.currentTarget.dataset.pid
           wx.request({
-            url: 'http://localhost:8080/collections/' + uid + '/' + pid,
+            url: app.globalData.urlHead +'collections/' + uid + '/' + pid,
             method: 'delete',
             header: {
               'content-type': 'application/x-www-form-urlencoded',
@@ -106,7 +106,7 @@ Page({
     var that = this;
     var uid = wx.getStorageSync('basicUser').uid
     wx.request({
-      url: 'http://localhost:8080/collections/' + uid,
+      url: app.globalData.urlHead +'collections/' + uid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

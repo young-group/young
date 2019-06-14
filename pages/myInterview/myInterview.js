@@ -126,7 +126,7 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid
 
       wx.request({
-        url: 'http://localhost:8080/enrolls/1/' + uid,
+        url: app.globalData.urlHead +'enrolls/1/' + uid,
         method: 'get',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
@@ -152,7 +152,7 @@ Page({
       })
 
       wx.request({
-        url: 'http://localhost:8080/enrolls/2/' + uid,
+        url: app.globalData.urlHead +'enrolls/2/' + uid,
         method: 'get',
         header: {
           'content-type': 'application/x-www-form-urlencoded',

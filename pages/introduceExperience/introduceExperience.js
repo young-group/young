@@ -1,4 +1,5 @@
 // pages/mineEdit/mineEdit.js
+const app = getApp()
 Page({
 
   /**
@@ -112,7 +113,7 @@ Page({
     
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/users/post2',
+      url: app.globalData.urlHead +'users/post2',
       method: 'get',
       data: {
         experienceJson: JSON.stringify(wx.getStorageSync('experience')),
@@ -190,7 +191,7 @@ Page({
   formReset: function () {
     var id = wx.getStorageSync('basicUser').workList[0].id
     wx.request({
-      url: 'http://localhost:8080/users/'+id,
+      url: app.globalData.urlHead +'users/'+id,
       method: 'delete',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

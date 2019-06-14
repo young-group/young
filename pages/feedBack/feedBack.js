@@ -1,3 +1,4 @@
+const App = getApp()
 Page({
 
   /**
@@ -69,7 +70,7 @@ Page({
    * 获取表单提交过来的参数
    */
   formSubmit: function (e) {
-    console.log(e.detail.value.content);
+    // console.log(e.detail.value.content);
     if (e.detail.value.content==""){
       wx.showToast({
         icon: 'none',
@@ -83,9 +84,9 @@ Page({
     })
 
 
-    console.log(that.data.feedBack.content + "---------")
+    // console.log(that.data.feedBack.content + "---------")
     wx.request({
-      url: 'http://localhost:8080/feedBacks/',
+      url: App.globalData.urlHead +'feedBacks/',
       method: 'post',
       data: {
         content: that.data.feedBack.content,
