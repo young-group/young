@@ -23,9 +23,10 @@ Page({
     var that =this
     var pid = e.currentTarget.dataset.pid
     var uid = wx.getStorageSync('basicUser').uid;
+    console.log("pid--"+pid+"----uid"+uid)
     if(this.data.haveCollect==true){
       wx.request({
-        url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+        url: app.globalData.urlHead +'collections/'+uid+'/'+pid,
         method:'delete',
         header: {
           'content-type': 'application/json' // 默认值
@@ -49,7 +50,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+        url: app.globalData.urlHead +'collections/'+uid+'/'+pid,
         method:'post',
         header: {
           'content-type': 'application/json' // 默认值
@@ -77,6 +78,7 @@ Page({
     var that = this
     var pid = e.currentTarget.dataset.pid
     var uid = wx.getStorageSync('basicUser').uid;
+    console.log("pid--" + pid + "----uid" + uid)
     if(this.data.haveEnroll==true){
        wx.showToast({
          title: '已经报名,请前去个人中心查看状态',
@@ -86,7 +88,7 @@ Page({
        return 
     }else{
       wx.request({
-        url: 'http://localhost:8080/enrolls/willingToEnroll/'+pid+'/'+uid,
+        url: app.globalData.urlHead +'enrolls/willingToEnroll/'+pid+'/'+uid,
         method:'post',
         header: {
           'content-type': 'application/json' // 默认值
@@ -126,7 +128,7 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/collections/'+uid+'/'+pid,
+      url: app.globalData.urlHead +'collections/'+uid+'/'+pid,
       method:'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -149,7 +151,7 @@ Page({
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/enrolls//isEnroll/'+pid+'/'+uid,
+      url: app.globalData.urlHead +'enrolls//isEnroll/'+pid+'/'+uid,
      method:'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -174,7 +176,7 @@ Page({
   loadData: function (pid1) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/position/getPosition/'+pid1,
+      url: app.globalData.urlHead +'position/getPosition/'+pid1,
       header: {
         'content-type': 'application/json' // 默认值
       },

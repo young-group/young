@@ -65,7 +65,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/es/getPosition/' + e, 
+      url: app.globalData.urlHead +'es/getPosition/' + e, 
       header: {
         'content-type': 'application/json' // 默认值
       },
