@@ -10,4 +10,7 @@
       <text class='item-time'>{{item.beginTime}}</text>
     </view>
   </view>
+    <view wx:if="{{positionList.length == 0}}" class="content-empty">
+      <text class="text">暂无记录~</text>
+    </view>
 </template>

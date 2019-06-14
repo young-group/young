@@ -56,3 +56,10 @@
   width: 17px;
   height: 17px;
 }
+
+.content-empty {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+  color: #c2cfcc;
+}

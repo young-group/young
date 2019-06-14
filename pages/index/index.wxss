@@ -93,3 +93,10 @@
 .item-title{
   font-size: 13px;
 }
+
+.content-empty {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+  color: #c2cfcc;
+}
