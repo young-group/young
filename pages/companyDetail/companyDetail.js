@@ -33,7 +33,7 @@ Page({
   loadData: function(cid1) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/company/getCompany/'+cid1, // 仅为示例，并非真实的接口地址
+      url: App.globalData.urlHead +'company/getCompany/'+cid1, // 仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },

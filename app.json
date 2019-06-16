@@ -18,7 +18,8 @@
     "pages/introduceExperience/introduceExperience",
     "pages/evaluation/evaluation",
     "pages/mineEdit/mineEdit",
-    "pages/myInterview/myInterview"
+    "pages/myInterview/myInterview",
+    "pages/camp/camp"
   ],
   "window": {
     "backgroundTextStyle": "light",

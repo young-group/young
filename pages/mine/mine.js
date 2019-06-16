@@ -31,7 +31,7 @@ Page({
       {
         icon: '../../static/images/mine/camp.png',
         text: '营地入驻（商家入口）',
-        path: ''
+        path: '/pages/camp/camp'
       },
       {
         icon: '../../static/images/mine/config.png',

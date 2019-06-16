@@ -216,8 +216,6 @@ Page({
    */
   viewPositionDetail: (e) => {
     console.log(e)
-    app.navTo('positionDetail', {
-      positionId: e.currentTarget.dataset.pid
-    })
+    app.navTo('positionDetail', { positionId: e.currentTarget.dataset.pid })
   },
 })
