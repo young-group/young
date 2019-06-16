@@ -5,7 +5,7 @@
 
     <view class="content-list">
 
-      <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail">
+      <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail" data-pid='{{item.position.pid}}'>
         <view class="content-item-state">
           <view class="content-item-title text-ellipsis">{{item.position.company.companyName}}</view>
           <text class="content-item-status">【 {{item.status}} 】</text>

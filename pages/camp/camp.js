@@ -6,18 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mynumber: "",
     hidePopup: true,
     userInfo: App.globalData.userInfo,
-    items: [
-      {
-        icon: '../../static/images/mine/aboutus.png',
-        text: '关于我们',
+    items: [{
+      icon: '../../static/images/mine/camp/apply.png',
+        text: '申请入驻',
         path: '/pages/aboutus/aboutus'
       },
       {
-        icon: '../../static/images/mine/feedback.png',
-        text: '意见反馈',
+        icon: '../../static/images/mine/camp/management.png',
+        text: '职位管理',
+        path: '/pages/feedBack/feedBack'
+      },
+      {
+        icon: '../../static/images/mine/camp/verify.png',
+        text: '报名审核',
         path: '/pages/feedBack/feedBack'
       },
 
@@ -28,11 +31,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     wx.getStorage({
       key: 'phoneNumber',
-      success: function (res) {
+      success: function(res) {
         that.setData({
           mynumber: res.data
         })
@@ -43,49 +46,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: "番薯青年派",
       path: "/pages/home/home"
@@ -110,8 +113,8 @@ Page({
   //   })
   // },
 
-  bindtap(e) { },
-  navigateTo: function (e) {
+  bindtap(e) {},
+  navigateTo: function(e) {
     const index = e.currentTarget.dataset.index;
     const path = e.currentTarget.dataset.path;
     switch (index) {
@@ -132,17 +135,17 @@ Page({
     };
   },
 
-  closePopupTap: function () {
+  closePopupTap: function() {
     this.setData({
       hidePopup: true
     })
   },
-  showPopupTap: function () {
+  showPopupTap: function() {
     this.setData({
       hidePopup: false
     })
   },
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     // console.log(e);
     // const phoneNumber = e.detail.value.phoneNumber;
     // if (phoneNumber.length != 11 && phoneNumber.length != 8) {
@@ -161,20 +164,20 @@ Page({
     // });
     // this.closePopupTap();
   },
-  bind: function () {
+  bind: function() {
     wx.redirectTo({
       url: 'test?id=1'
     })
   },
 
-  getPhoneNumber: function (e) { //点击获取手机号码按钮
+  getPhoneNumber: function(e) { //点击获取手机号码按钮
     wx.login({
-      success: function (res) {
+      success: function(res) {
         var code = res.code
         if (code) {
           var that = this;
           wx.checkSession({
-            success: function () {
+            success: function() {
               console.log(e.detail.errMsg)
               console.log(e.detail.iv)
               console.log(e.detail.encryptedData)
@@ -206,9 +209,11 @@ Page({
                     console.log(res);
                     var phone = res.data.phoneNumber;
                     console.log(phone);
-                    this.setData({ mynumber: phone })
+                    this.setData({
+                      mynumber: phone
+                    })
                   },
-                  fail: function (res) {
+                  fail: function(res) {
                     console.log("解密失败~~~~~~~~~~~~~");
                     console.log(res);
                   }
@@ -216,7 +221,7 @@ Page({
               }
             },
 
-            fail: function () {
+            fail: function() {
               console.log("session_key 已经失效，需要重新执行登录流程");
               that.wxlogin(); //重新登录
             }
@@ -224,5 +229,23 @@ Page({
         }
       }
     });
+  },
+
+  viewApplyDetail: function() {
+    wx.showToast({
+      title: '操作失败',
+      icon: 'none',
+      duration: 2000
+    })
+    wx.navigateTo({
+      url: 'page/home/home'
+    })
+  },
+  check: function() {
+    wx.showToast({
+      title: '权限不够哟',
+      icon: 'none',
+      duration: 2000
+    })
   }
 })

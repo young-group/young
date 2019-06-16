@@ -2,19 +2,22 @@
 <view class="container">
 
 
-  <view class="zan-cell">
-    <image src="../../static/images/mine/phone.png" class="img"></image>
-    <text class='textSize'>手机号码：</text>
-    <view class="phoneNumber"><text id="mynumber" >{{mynumber}}</text></view>
-    <button class='pop_btn' plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber"  lang="zh_CN" hover-class='btn_hover'>获取号码</button>
+  <!-- 申请入驻 -->
+  <view class="zan-cell zan-cell--access" bindtap="viewApplyDetail">
+    <image src="{{items[0].icon}}" class="img"></image>
+    <text class='textSize'>{{ items[0].text }}</text>
   </view>
 
+    <!-- 职位管理 -->
+  <view class="zan-cell zan-cell--access" bindtap="check">
+    <image src="{{items[1].icon}}" class="img"></image>
+    <text class='textSize'>{{ items[1].text }}</text>
+  </view>
 
-  <view class="zan-cell zan-cell--access" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
-    <!-- <view class="zan-cell__bd"> -->
-    <image src="{{item.icon}}" class="img"></image>
-    <text class='textSize'>{{ item.text }}</text>
-    <!-- </view> -->
+    <!-- 报名审核 -->
+  <view class="zan-cell zan-cell--access" bindtap="check">
+    <image src="{{items[2].icon}}" class="img"></image>
+    <text class='textSize'>{{ items[2].text }}</text>
   </view>
   <view class='zan-cell'></view>
 

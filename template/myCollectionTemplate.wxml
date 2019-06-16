@@ -4,14 +4,14 @@
     </view>
   <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}' >
     <view class="collection-item">
-      <image class="item-logo" src="{{item.clogo}}" />
+      <image class="item-logo" src="http://localhost:8080/young/static/{{item.company.clogo}}" />
       <view class="item-desc">
         <view class="item-desc-l">
           <view class="item-title text-ellipsis">{{item.company.companyName}}</view>
-          <view class="item-info" bindtap="viewPositionDetail">
+          <view class="item-info" bindtap="viewPositionDetail" data-pid='{{item.pid}}'>
             <text class="item-pos">{{item.positionName}}</text>
           </view>
-          <view class="item-time" bindtap="viewPositionDetail">{{item.endtime}}</view>
+          <view class="item-time" bindtap="viewPositionDetail" data-pid='{{item.pid}}'>{{item.endtime}}</view>
         </view>
 
         <view class="item-desc-r">

@@ -16,14 +16,14 @@ Page({
    * 查看公司详细招聘信息
    */
   viewCompanyDetail: (e) => {
-
+     
     app.navTo('companyDetail', { cid: e.currentTarget.dataset.pid})
   },
   haveCollect (e)  {
     var that =this
     var pid = e.currentTarget.dataset.pid
     var uid = wx.getStorageSync('basicUser').uid;
-    console.log("pid--"+pid+"----uid"+uid)
+    // console.log("pid--"+pid+"----uid"+uid)
     if(this.data.haveCollect==true){
       wx.request({
         url: app.globalData.urlHead +'collections/'+uid+'/'+pid,
@@ -124,7 +124,7 @@ Page({
   },
   //判断当前用户有没有收藏过这条职位
   loadCollect:function(pid){ 
-    console.log(" -------------loadCollect:function(pid)")
+    console.log(" -------------loadCollect:function(pid)"+pid)
     var uid = wx.getStorageSync('basicUser').uid;
     var that = this;
     wx.request({
