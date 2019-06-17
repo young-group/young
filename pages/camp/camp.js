@@ -243,7 +243,7 @@ Page({
   },
   check: function() {
     wx.showToast({
-      title: '权限不够哟',
+      title: '审核通过后可访问',
       icon: 'none',
       duration: 2000
     })

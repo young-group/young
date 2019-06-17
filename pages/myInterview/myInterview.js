@@ -132,7 +132,7 @@ Page({
           'content-type': 'application/x-www-form-urlencoded',
         },
         success(res) {
-          console.log(res.data);
+          // console.log(res.data);
           var enroll = res.data[0];
           that.setData({
             information: {
@@ -158,7 +158,7 @@ Page({
           'content-type': 'application/x-www-form-urlencoded',
         },
         success(res) {
-          console.log(res.data);
+          // console.log(res.data);
           var enroll = res.data[0];
           that.setData({
             information: {
@@ -183,7 +183,7 @@ Page({
 
 
   swichNav1: function(e) {
-    console.log(e);
+    // console.log(e);
     var that = this;
     if (this.data.page === e.target.dataset.current+1) {
       return false;
@@ -196,7 +196,7 @@ Page({
   },
 
   swichNav2: function(e) {
-    console.log(e);
+    // console.log(e);
     var that = this;
     if (this.data.page === e.target.dataset.current+1) {
       return false;

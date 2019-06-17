@@ -93,7 +93,7 @@ Page({
    * 获取表单提交过来的参数
    */
   formSubmit: function (e) {
-    console.log(e.detail.value.favor);
+    // console.log(e.detail.value.favor);
     var basicUser=wx.getStorageSync('basicUser')
     basicUser.uspecialty = e.detail.value.favor
     wx.clearStorageSync()
@@ -101,7 +101,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: app.globalData.urlHead +'users/post',
+      url: app.globalData.urlHead +'users/favor/modify',
       method: 'post',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),

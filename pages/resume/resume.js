@@ -177,11 +177,7 @@ Page({
   },
   //下拉触发事件
   onPageScroll: function () {
-    console.log("刷新-----")
     var that = this;
-    // that.setData({
-    //   workList: that.data.workList.splice(0)
-    // })
     this.loadData()
   },
 

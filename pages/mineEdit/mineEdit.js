@@ -27,7 +27,7 @@ Page({
     this.loadData()
   },
   loadData: function(e) {
-    console.log(wx.getStorageSync('basicUser').ubirthday)
+    // console.log(wx.getStorageSync('basicUser').ubirthday)
     var usex = wx.getStorageSync('basicUser').usex;
     if (usex == '男') {
       var that = this;
@@ -115,8 +115,8 @@ Page({
 
     var that = this;
     wx.request({
-      url: app.globalData.urlHead +'users/post1',
-      method: 'get',
+      url: app.globalData.urlHead +'users/basicUser/modify',
+      method: 'post',
       data: {
         basicUserJson: JSON.stringify(wx.getStorageSync('basicUser')),
       },

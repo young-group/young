@@ -24,12 +24,12 @@ Page({
       var beginRes = wx.getStorageSync('basicUser').workList[0].beginTime
       var begin = beginRes.replace('.', '-');
       begin = begin+"-01"
-      console.log(begin)
+      // console.log(begin)
 
       var endRes = wx.getStorageSync('basicUser').workList[0].endTime
       var end = endRes.replace('.', '-');
       end = end + "-01"
-      console.log(end)
+      // console.log(end)
       that.setData({
         startdate: begin,
         enddate: end,
@@ -91,7 +91,7 @@ Page({
    * 获取表单提交过来的参数
    */
   formSubmit: function (e) {
-    console.log(e.detail.value);
+    // console.log(e.detail.value);
     
     // if (wx.getStorageSync('basicUser').workList[0]) {
     // var basicUser = wx.getStorageSync('basicUser')
@@ -115,8 +115,8 @@ Page({
     
     var that = this;
     wx.request({
-      url: app.globalData.urlHead +'users/post2',
-      method: 'get',
+      url: app.globalData.urlHead +'users/workList/modify',
+      method: 'post',
       data: {
         experienceJson: JSON.stringify(wx.getStorageSync('experience')),
       },
@@ -160,7 +160,6 @@ Page({
     })
   },
   save:function(e){
-    console.log(e.detail.value)
     // console.log(e.detail.value);
     // var work = wx.getStorageSync('basicUser').workList[0]
     // // work.job = e.detail.value.job
@@ -194,13 +193,13 @@ Page({
     // })
   },
   del: function (e) {
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
 
   },
   formReset: function () {
     var id = wx.getStorageSync('basicUser').workList[0].id
     wx.request({
-      url: app.globalData.urlHead +'users/'+id,
+      url: app.globalData.urlHead +'users/workList/'+id,
       method: 'delete',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
