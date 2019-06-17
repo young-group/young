@@ -4,8 +4,8 @@ App({
   globalData: {
     userInfo: null,
     basicUser:null,
-    urlHead: 'https://ayoniusth.com/young/'
-    // urlHead: 'http://localhost:8080/young/'
+    // urlHead: 'https://ayoniusth.com/young/'
+    urlHead: 'http://localhost:8080/young/'
   },
   onLaunch: function () {
       

@@ -4,7 +4,7 @@
     </view>
   <view wx:for='{{positionList}}' wx:key='{{item.pid}}' class='' data-pid='{{item.pid}}' >
     <view class="collection-item">
-      <image class="item-logo" src="http://localhost:8080/young/static/{{item.company.clogo}}" />
+      <image class="item-logo" src="https://ayoniusth.com/young/{{item.company.clogo}}" />
       <view class="item-desc">
         <view class="item-desc-l">
           <view class="item-title text-ellipsis">{{item.company.companyName}}</view>
