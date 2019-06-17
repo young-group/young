@@ -10,7 +10,7 @@
   </view>
   <view class="company" bindtap="viewCompanyDetail" data-pid="{{position.company.cid}}">
     <!-- 公司的logo -->
-    <image  class="com-logo" src="http://localhost:8080/young/static/{{position.company.clogo}}" />
+    <image  class="com-logo" src="https://ayoniusth.com/young/{{position.company.clogo}}" />
     
     <view class="aa">{{position.positionName}}</view>
   </view>

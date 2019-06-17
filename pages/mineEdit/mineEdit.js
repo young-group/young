@@ -17,6 +17,7 @@ Page({
     result: "fail",
     uuname: wx.getStorageSync('basicUser').uname,
     ubirthday: wx.getStorageSync('basicUser').ubirthday,
+    ucity: wx.getStorageSync('basicUser').ucity
   },
 
   /**
@@ -26,6 +27,7 @@ Page({
     this.loadData()
   },
   loadData: function(e) {
+    console.log(wx.getStorageSync('basicUser').ubirthday)
     var usex = wx.getStorageSync('basicUser').usex;
     if (usex == '男') {
       var that = this;
@@ -100,7 +102,7 @@ Page({
     basicUser.uschoolProfession = e.detail.value.uschoolProfession
     basicUser.utel = e.detail.value.utel
     basicUser.uemail = e.detail.value.uemail
-    basicUser.ubirthday = e.detail.value.ubirthday
+    basicUser.ucity = e.detail.value.ucity
     var that = this;
     var index = that.data.index
     if (index == 0) {

@@ -8,7 +8,7 @@ Page({
   data: {
     beginTime: "",
     endTime: "",
-    // job: wx.getStorageSync('basicUser').workList[0].job,
+    job: "",
     workDescribe: "",
     startdate:"",
     enddate:""
@@ -33,7 +33,7 @@ Page({
       that.setData({
         startdate: begin,
         enddate: end,
-        // job: wx.getStorageSync('basicUser').workList[0].job,
+        job: wx.getStorageSync('basicUser').workList[0].job,
         workDescribe: wx.getStorageSync('basicUser').workList[0].workDescribe
       })
     }
@@ -109,6 +109,8 @@ Page({
     experience.endTime = e.detail.value.enddate
     experience.workDescribe = e.detail.value.workDescribe
     experience.uid = wx.getStorageSync('basicUser').uid
+    experience.job = e.detail.value.job
+    // experience.id = e.detail.value.job
     wx.setStorageSync('experience', experience)
     
     var that = this;
@@ -132,9 +134,16 @@ Page({
         basicUser.workList[0]=experience
         wx.clearStorageSync()
         wx.setStorageSync('basicUser', basicUser)
+        wx.showToast({
+          title: '已提交',
+        });
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          icon: none,
+          title: '操作失败',
+        });
       }
     })
   },
@@ -198,9 +207,16 @@ Page({
       },
       success(res) {
         console.log(res.data);
+        wx.showToast({
+          title: '已删除',
+        });
       },
       fail(e) {
         console.log(e.errMsg)
+        wx.showToast({
+          icon: none,
+          title: '操作失败',
+        });
       }
     })
   }

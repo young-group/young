@@ -108,16 +108,18 @@ Page({
             name: res.data.uname,
             sex: res.data.usex,
             birth: res.data.ubirthday,
-            currentCity: res.data.city,
+            currentCity: res.data.ucity,
             univercity: res.data.uschoolName,
             major: res.data.uschoolProfession,
             tel: res.data.utel,
             email: res.data.uemail,
-            favor: res.data.uspecialty
+            favor: res.data.uspecialty,
+            
           }
         })
 
         if (res.data.workList){
+
           that.setData({
             // workList: [{
             //   startTime: res.data.workList[0].beginTime,
@@ -132,7 +134,7 @@ Page({
             // //   detail: "负责很多很多"
             // // }
             // ]
-            workList: that.data.workList.concat(res.data.workList),
+            workList: res.data.workList,
           })
 
         }
@@ -172,6 +174,15 @@ Page({
     app.navTo('positionDetail', {
       positionId: e.currentTarget.dataset.pid
     })
-  }
+  },
+  //下拉触发事件
+  onPageScroll: function () {
+    console.log("刷新-----")
+    var that = this;
+    // that.setData({
+    //   workList: that.data.workList.splice(0)
+    // })
+    this.loadData()
+  },
 
 })

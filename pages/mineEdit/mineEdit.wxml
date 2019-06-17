@@ -12,7 +12,7 @@
       <view class="input" >
         <picker mode="date" value="{{ubirthday}}" start="1900-1-1" end="2100-1-1" bindchange="bindDateChange">
           <view class=''>
-            <input placeholder='请选择日期' disabled='true' name="ubirthday" type="text" class="input" value="               {{ubirthday}}" />
+            <input placeholder='请选择日期' disabled='true' name="ubirthday" type="text" class="input" value="            {{ubirthday}}" />
           </view>
         </picker>
       </view>
@@ -39,7 +39,7 @@
 
     <view class="itemView">
       <text decode="true">所在城市:</text>
-      <input placeholder="" maxlength="11 " type="text " name="uname" value="{{ucity}}" class="input one {{!show?'show':'hide'}}" />
+      <input placeholder="" maxlength="11 " type="text " name="ucity" value="{{ucity}}" class="input one {{!show?'show':'hide'}}" />
     </view>
 
 

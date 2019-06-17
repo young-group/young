@@ -1,6 +1,6 @@
 <template name='position_link'>
   <view wx:for='{{positionList}}' wx:key='item.pid' class='list-item' data-pid='{{item.pid}}' bindtap="viewPositionDetail">
-    <image class='com-logo' src='http://localhost:8080/young/static/{{item.company.clogo}}'></image>
+    <image class='com-logo' src='https://ayoniusth.com/young/{{item.company.clogo}}'></image>
     <view class='item-desc'>
       <text class='item-title'>{{item.positionName}}</text>
       <view class='item-info'>

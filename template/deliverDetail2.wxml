@@ -1,11 +1,11 @@
 <template name='allDeliver_link2'>
   <!-- <swiper-item> -->
-  <view wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}' bindtap="viewPositionDetail">
+  <view wx:for='{{positionList2}}' wx:key='item.positionId' class='' data-pid='{{item.positionId}}'>
 
 
     <view class="content-list">
 
-      <view wx:if="{{true}}" class="content-item" bindtap="viewDeliverDetail" data-pid='{{item.position.pid}}'>
+      <view wx:if="{{true}}" class="content-item" bindtap="viewPositionDetail" data-pid='{{item.position.pid}}'>
         <view class="content-item-state">
           <view class="content-item-title text-ellipsis">{{item.position.company.companyName}}</view>
           <text class="content-item-status">【 {{item.status}} 】</text>
