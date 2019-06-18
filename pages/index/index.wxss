@@ -85,7 +85,7 @@
 
 .swipper-image {
   height: 477rpx;
-  margin-top: -38px;
+  margin-top: -9rpx;
   width: 95%; 
   padding: 5px 5px 0px 10px;
 }
@@ -123,7 +123,8 @@
   /* position: fixed; */
   width: 100%;
   /* left:5%; */
-  background: #eee;
+  /* background: #eee; */
+  
   height: 110rpx;
   font-size: 30rpx;
   border-bottom:1rpx solid #DDDDDD; 

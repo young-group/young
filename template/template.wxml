@@ -4,7 +4,9 @@
     <image class='com-logo' src='https://ayoniusth.com/young/{{item.company.clogo}}'></image>
 
     <view class='item-desc'>
-      <text class='item-title'>{{item.positionName}}</text>
+      <!-- <text class='item-title'>{{item.positionName}}</text> -->
+            <text class='item-title'>{{item.company.companyName}}</text>
+
       <view class='item-info'>
         <text class='item-pos text-ellipsis'>{{item.workAddress}}</text>
         <text class='item-salary'>{{item.salary}}</text>
