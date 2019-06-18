@@ -19,7 +19,8 @@
     "pages/evaluation/evaluation",
     "pages/mineEdit/mineEdit",
     "pages/myInterview/myInterview",
-    "pages/camp/camp"
+    "pages/camp/camp",
+    "pages/city/city"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -5,10 +5,12 @@
  
   <view wx:if='{{showBtn}}' class="list-more" bindtap='loadMore'>{{ isLoading ? '正在加载...': '加载更多' }}</view>
   <view class="r-input">
-      <input class="input" type="text" placeholder=" 搜 索 营 地" />
+  <view class="search-box">
       <view class="icon">
         <image class="icon-search" src="../../static/icon/search_normal.png"></image>
       </view>
+     <input placeholder="搜索营地/公司" class='search-input' bindinput='bindSarchInput' placeholder-class='search-input-placeholder' />
+     </view>
   </view>
 <swiper indicator-dots="{{indicatorDots}}"
  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swipper-image" circular="true">

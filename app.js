@@ -4,6 +4,7 @@ App({
   globalData: {
     userInfo: null,
     basicUser:null,
+    city:'哈尔滨',
     // urlHead: 'https://ayoniusth.com/young/'
     urlHead: 'http://localhost:8080/young/'
   },

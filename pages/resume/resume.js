@@ -94,9 +94,9 @@ Page({
   loadData: function(e) {
 
     var that = this;
-    var openid=wx.getStorageSync('basicUser').openid
+    var uid=wx.getStorageSync('basicUser').uid
     wx.request({
-      url: app.globalData.urlHead+'users/' + openid,
+      url: app.globalData.urlHead+'users/' + uid,
       method: 'get',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
