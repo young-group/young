@@ -12,7 +12,7 @@
     <!-- 公司的logo -->
     <image  class="com-logo" src="https://ayoniusth.com/young/{{position.company.clogo}}" />
     
-    <view class="aa">{{position.positionName}}</view>
+    <view class="aa">{{position.company.companyName}}</view>
   </view>
   <!-- 职位详情-start -->
   <view class="detail">

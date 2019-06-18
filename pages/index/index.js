@@ -89,6 +89,9 @@ Page({
     })
   },
   onShow: function () {
+    this.setData({
+      positionList:[]
+    })
     this.loadData(this.data.pageNo)
   }
 })

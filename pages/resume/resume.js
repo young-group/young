@@ -180,5 +180,9 @@ Page({
     var that = this;
     this.loadData()
   },
+  onShow: function () {
+    this.loadData()
+  }
+  
 
 })
