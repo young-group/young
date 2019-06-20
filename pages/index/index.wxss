@@ -86,8 +86,10 @@
 .swipper-image {
   height: 477rpx;
   margin-top: -9rpx;
-  width: 95%; 
-  padding: 5px 5px 0px 10px;
+  width: 90%; 
+  padding: 5rpx 40rpx 25rpx;
+  display:flex; 
+  justify-content: center; 
 }
 
 .item-title{
@@ -109,7 +111,8 @@
   margin-left: 7.5%;
   border-radius: 20rpx;
   /* border: 1rpx solid red; */
-  background: #fff;
+  /* background: #fff; */
+  background: #eee;
   margin-top: 20rpx;
   padding-left: 5%;
 }
@@ -124,9 +127,10 @@
   width: 100%;
   /* left:5%; */
   /* background: #eee; */
+  background: #fff;
   
   height: 110rpx;
   font-size: 30rpx;
-  border-bottom:1rpx solid #DDDDDD; 
+  border-bottom:1rpx solid #fff; 
      /* border: 1rpx solid red;   */
 }

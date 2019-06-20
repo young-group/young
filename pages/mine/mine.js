@@ -47,7 +47,7 @@ Page({
    */
   onLoad: function(options) {
 
-    var tmp = wx.getStorageSync('basicUser');
+    var tmp = wx.getStorageSync('basicUser').uid;
     // console.log(tmp+"----------")
     if(tmp){
       var that = this;
