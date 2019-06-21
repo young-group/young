@@ -103,6 +103,7 @@ Page({
       },
       success(res) {
         wx.setStorageSync('basicUser', res.data)
+        // console.log(res.data)
         that.setData({
           information: {
             name: res.data.uname,
@@ -175,11 +176,11 @@ Page({
       positionId: e.currentTarget.dataset.pid
     })
   },
-  //下拉触发事件
-  onPageScroll: function () {
-    var that = this;
-    this.loadData()
-  },
+  // //下拉触发事件
+  // onPageScroll: function () {
+  //   var that = this;
+  //   this.loadData()
+  // },
   onShow: function () {
     this.loadData()
   }

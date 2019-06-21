@@ -198,14 +198,19 @@ Page({
   },
   formReset: function () {
     var id = wx.getStorageSync('basicUser').workList[0].id
+    var uid = wx.getStorageSync('basicUser').uid
     wx.request({
-      url: app.globalData.urlHead +'users/workList/'+id,
+      url: app.globalData.urlHead +'users/workList/'+id+'/'+uid,
       method: 'delete',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
       },
       success(res) {
         console.log(res.data);
+        // var basicUser = wx.getStorageSync('basicUser')
+        // wx.clearStorage()
+        // basicUser.workList={}
+        // wx.setStorageSync('basicUser', basicUser)
         wx.showToast({
           title: '已删除',
         });
