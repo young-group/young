@@ -88,7 +88,7 @@ Page({
       }
     })
   },
-  onShow: function () {
+  onLoad: function () {
     this.setData({
       positionList:[]
     })
